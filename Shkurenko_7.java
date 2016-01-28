@@ -9,14 +9,16 @@ public class Shkurenko_7 {
     public static void main(String[] args) {
         task5();
     }
+
     Scanner sc = new Scanner(System.in);
+
     public static void task5() {
-		/*
-		 * 5. Показать на экране равнобедренный треугольник (пользователь вводит
+        /*
+         * 5. Показать на экране равнобедренный треугольник (пользователь вводит
 		 * высоту). Затем сделать то же самое, но чтоб фигура внутри была пустая
 		 * (остаётся только контур).
 		 */
-        Scanner sc = new Scanner(System.in);
+
         int h = sc.nextInt();
         int a = h * 2 - 1;
         for (int y = 0; y < h; y++) {
@@ -28,6 +30,12 @@ public class Shkurenko_7 {
             }
             System.out.println();
         }
+    }
+
+    public static void task8() {
+        //8.	Осуществить циклический сдвиг влево введённого числа на N разрядов (например, при сд
+        // виге числа 12345 влево на 3 разряда получится число 45123).
+
     }
 
 }
