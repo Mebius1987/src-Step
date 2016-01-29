@@ -37,12 +37,13 @@ public class Shkurenko_7 {
         int number = sc.nextInt();
         System.out.println("на сколько требуется сделать сдвиг");
         int n = sc.nextInt();
-        int a;
+        int a=0;
         for (int i= 1; i <= n; i++) {
-            //a = number % 10;
+            a = number % 10;
             number /= 10;
-            System.out.print(number);
         }
+            System.out.print(a);
+
     }
 
 }
