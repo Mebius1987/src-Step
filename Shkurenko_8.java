@@ -73,11 +73,13 @@ public class Shkurenko_8 {
         */
         int a = 100;
         char mas[] = new char[a];
-        int temp ;
+        int temps = 0;
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (char) (Math.random() * 96 + 33);
             System.out.println(i + "  " + mas[i]);
-            mas[i];
+            if ((int) mas[i] > 33 && (int) mas[i] < 47 || (int) mas[i] > 58 && (int) mas[i] < 61 || (int) mas[i] > 122 && (int) mas[i] < 127)
+                temps++;
+            System.out.println(temps);
         }
     }
 
