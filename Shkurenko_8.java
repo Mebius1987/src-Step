@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task2();
+        task4();
     }
 
     public static void task1() {
@@ -37,11 +37,44 @@ public class Shkurenko_8 {
             mas[i] = (int) (Math.random() * 10000);
             System.out.print(mas[i] + " ");
         }
-        System.out.print(mas[] );
+        System.out.println();
+        for (int i = 0; i < mas.length; i++) {
+            if (i % 2 == 0)
+                System.out.print(i + " - " + mas[i] + ", ");
+        }
     }
+
+    public static void task3() {
          /*
         3.	Создать массив из 10 случайных чисел в диапазоне от -20 до 20. Определить количество, сумму  и среднее арифметическое положительных элементов массива.
+        */
+        int a = 10;//dlina massiva
+        int mas[] = new int[a];
+        int kol = 0;
+        int sum = 0;
+        int arf = 0;
+        for (int i = 0; i < mas.length; i++) {
+            mas[i] = (int) (Math.random() * 40 - 20);
+            //System.out.print(mas[i] + " ");
+            System.out.println(i + "  " + mas[i] + ", ");
+            if (mas[i] > 0) {
+                kol++;
+                sum += mas[i];
+            }
+            arf = sum / mas.length;
+        }
+        System.out.println("Положительных элеметов масива =" + kol + "\n Сумма =" + sum + "\n  Среднее арифметическое положительных элементов массива =" + arf);
+    }
+
+    public static void task4() {
+        /*
         4.	Создать символьный массив из 100 случайных элементов. Определить, сколько в нём цифр, букв и знаков пунктуации.
+        */
+        int a = 100;
+        String mas[] = new String[a];
+        for ()
+    }
+        /*
         5.	Написать программу, которая предлагает пользователю ввести число, и затем подсчитывает, сколько раз это число встречается в массиве на 100 случайных элементов.
         6.	Создать массив из 20 случайных чисел в диапазоне от -10 до 30. Написать программу, определяющую сумму элементов массива, находящихся в массиве после первого отрицательного элемента.
         7.	Создать массив из 20 случайных чисел в диапазоне от -30 до 10. Написать программу, определяющую сумму элементов массива, находящихся в массиве до первого положительного элемента.
