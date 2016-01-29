@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task5();
+        task4();
     }
 
     public static void task1() {
@@ -67,15 +67,17 @@ public class Shkurenko_8 {
         System.out.println("Положительных элеметов масива =" + kol + "\n Сумма =" + sum + "\n  Среднее арифметическое положительных элементов массива =" + arf);
     }
 
-    public static void task4() {//не решил
+    public static void task4() {
         /*
         4.	Создать символьный массив из 100 случайных элементов. Определить, сколько в нём цифр, букв и знаков пунктуации.
         */
         int a = 100;
         char mas[] = new char[a];
+        int temp ;
         for (int i = 0; i < mas.length; i++) {
-            mas[i] = (char) (Math.random() * 126 - 93);
-            System.out.println(i + "  " + mas[i] + ", ");
+            mas[i] = (char) (Math.random() * 96 + 33);
+            System.out.println(i + "  " + mas[i]);
+            mas[i];
         }
     }
 
@@ -92,7 +94,7 @@ public class Shkurenko_8 {
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (int) (Math.random() * 100);
             //System.out.println(i + "  " + mas[i]);
-            if(number == mas[i]){
+            if (number == mas[i]) {
                 kol++;
             }
         }
