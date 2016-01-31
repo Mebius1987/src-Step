@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task4();
+        task6();
     }
 
     public static void task1() {
@@ -71,16 +71,27 @@ public class Shkurenko_8 {
         /*
         4.	Создать символьный массив из 100 случайных элементов. Определить, сколько в нём цифр, букв и знаков пунктуации.
         */
-        int a = 100;
+        int a = 99;
         char mas[] = new char[a];
         int temps = 0;
+        int bukva = 0;
+        int znak = 0;
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (char) (Math.random() * 96 + 33);
-            System.out.println(i + "  " + mas[i]);
-            if ((int) mas[i] > 33 && (int) mas[i] < 47 || (int) mas[i] > 58 && (int) mas[i] < 61 || (int) mas[i] > 122 && (int) mas[i] < 127)
+            //System.out.println(i + "  " + mas[i]);
+            if ((int) mas[i] >= 48 && (int) mas[i] < 57) {
                 temps++;
-            System.out.println(temps);
+
+            } else if ((int) mas[i] >= 97 && (int) mas[i] < 122) {
+                bukva++;
+
+            } else
+                znak++;
+
         }
+        System.out.println("Цифр " + temps);
+        System.out.println("Знаков " + znak);
+        System.out.println("Букв " + bukva);
     }
 
     public static void task5() {
@@ -102,8 +113,14 @@ public class Shkurenko_8 {
         }
         System.out.println("Число встречается в массиве на 100 случайных элементов " + kol);
     }
+
+    public static void task6() {
         /*
         6.	Создать массив из 20 случайных чисел в диапазоне от -10 до 30. Написать программу, определяющую сумму элементов массива, находящихся в массиве после первого отрицательного элемента.
+        */
+
+    }
+    /*
         7.	Создать массив из 20 случайных чисел в диапазоне от -30 до 10. Написать программу, определяющую сумму элементов массива, находящихся в массиве до первого положительного элемента.
         8.	Создать массив из 20 случайных чисел. Определить минимальный и максимальный элемент массива (вывести значение и порядковый номер).
         9.	Создать массив на 100 вещественных чисел. Определить, сколько элементов массива не имеют вещественной части.
