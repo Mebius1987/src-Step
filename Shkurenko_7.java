@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Shkurenko_7 {
     public static void main(String[] args) {
-        task8();
+        task10();
     }
 
 
@@ -32,29 +32,43 @@ public class Shkurenko_7 {
     public static void task8() {
         //8.	Осуществить циклический сдвиг влево введённого числа на N разрядов (например, при сд
         // виге числа 12345 влево на 3 разряда получится число 45123).
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите число сдвиг которого необходимо сделать");
-        int number = sc.nextInt();
-        System.out.println("на сколько требуется сделать сдвиг");
-        int n = sc.nextInt();
-        int a = 0;
-        for (int i = 1; i <= n; i++) {
-            a = number % 10;
-            number /= 10;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите число:");
+        if (scanner.hasNextInt()) {
+            int value = scanner.nextInt();
+            int count = 1;
+            int result = 0;
+            for (int i = 10; value / i > 0; i *= 10) {
+                count++;
+            }
+            for (int i = 10, j = (int) Math.pow(10, count); ; i *= 10, j /= 10) {
+                int ostatok = value % i;
+                value -= ostatok;
+                ostatok /= i / 10;
+                result += ostatok * j;
+                if (value / i == 0) {
+                    break;
+                }
+            }
+            System.out.println(result / 10);
         }
-        System.out.print(a);
 
     }
+    public static void task9() {
     /*
     9.	Вывести на экран каркас параллелепипеда размерностью AxBxC.
+    */
+    }
+    public static void task10() {
+    /*
 10.	Написать программу, которая выводит на экран все простые числа в диапазоне от 2 до 10.000.000.
+*/
+
+    }
+/*
 11.	Показать на экране все числа Армстронга в диапазоне от 0 до 10.000.000.
 12.	Показать на экране все совершенные числа в диапазоне от 0 до 10.000.000.
 13.	Показать на экране все числа Фибоначчи в диапазоне от 0 до 10.000.000.
-14.	Написать программу, которая генерирует календарь на любой год, указанный с клавиатуры.
-
-
-
 
 15.	Вывести лестницу из отрезков определённой длины. Длина (например, 14) и количество ступенек (например, 4) указывается с клавиатуры.
 	**************

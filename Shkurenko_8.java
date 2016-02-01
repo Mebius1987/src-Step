@@ -346,12 +346,9 @@ public class Shkurenko_8 {
         for (int i = 0; i < masN.length; i++) {
             masN[i] = (int) (Math.random() * 50);
         }
-        System.out.println(Arrays.toString(masM));
-        System.out.println(Arrays.toString(masN));
-
         int mas[] = new int[razmerM + razmerN];
         for (int i = 0; i < mas.length; i++){
-            if (masM [i])
+            if (masM [i] == masN [i]);
         }
 
 
