@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task7();
+        task8();
     }
 
     public static void task1() {
@@ -145,7 +145,7 @@ public class Shkurenko_8 {
         7.	Создать массив из 20 случайных чисел в диапазоне от -30 до 10. Написать программу, определяющую сумму элементов массива, находящихся
         в массиве до первого положительного элемента.
         */
-        int razmer = 5;
+        int razmer = 20;
         int mas[] = new int[razmer];
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (int) (Math.random() * 40 - 30);
@@ -160,10 +160,16 @@ public class Shkurenko_8 {
         }
         System.out.println("Сумма = " + sum);
     }
-    public static void task7() {
+    public static void task8() {
         /*
         8.	Создать массив из 20 случайных чисел. Определить минимальный и максимальный элемент массива (вывести значение и порядковый номер).
         */
+        int razmer = 20;
+        int mas[] = new int[razmer];
+        for (int i = 0;i < mas.length; i++){
+            mas[i] = (int) (Math.random()*100);
+        }
+        //System.out.println(Arrays.toString(mas));
     }
     /*
         9.	Создать массив на 100 вещественных чисел. Определить, сколько элементов массива не имеют вещественной части.
