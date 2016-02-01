@@ -71,25 +71,25 @@ public class Shkurenko_8 {
         /*
         4.	Создать символьный массив из 100 случайных элементов. Определить, сколько в нём цифр, букв и знаков пунктуации.
         */
-        int a = 99;
+        int a = 100;
         char mas[] = new char[a];
-        int temps = 0;
+        int cifra = 0;
         int bukva = 0;
         int znak = 0;
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (char) (Math.random() * 96 + 33);
-            //System.out.println(i + "  " + mas[i]);
-            if (Character.isDigit(mas[a]))
-                temps++;
-
-             if (Character.isLetter(mas[a]))
+            System.out.println(i + "  " + mas[i]);
+            if (Character.isDigit(mas[i])) {
+                cifra++;
+            }
+            else if (Character.isLetter(mas[i])) {
                 bukva++;
+            }else
+            znak++;
 
-             if (Character.isSpaceChar(mas[a]))
-                znak++;
 
         }
-        System.out.println("Цифр " + temps);
+        System.out.println("Цифр " + cifra);
         System.out.println("Знаков " + znak);
         System.out.println("Букв " + bukva);
     }
@@ -112,7 +112,7 @@ public class Shkurenko_8 {
             if (number == mas[i]) {
                 kol++;
             }
-    }
+        }
         System.out.println("Число встречается в массиве на 100 случайных элементов " + kol);
     }
 
