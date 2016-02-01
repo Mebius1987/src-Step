@@ -179,8 +179,10 @@ public class Shkurenko_8 {
             if (mas[i] < min) {
                 min = mas[i];
                 mini = i;
+
             }
         }
+
         max = mas[0];
         for (int i = 0; i < mas.length; i++) {
             if (mas[i] > max) {
@@ -196,7 +198,7 @@ public class Shkurenko_8 {
     /*
         9.	Создать массив на 100 вещественных чисел. Определить, сколько элементов массива не имеют вещественной части.
         */
-        int razmer = 100;
+        int razmer = 1000000;
         int a = 0;
         float mas[] = new float[razmer];
         for (int i = 0; i < mas.length; i++) {
