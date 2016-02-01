@@ -219,16 +219,16 @@ public class Shkurenko_8 {
         двухразрядных и трёхразрядных чисел в процентном отношении.
         */
         int razmer = 200;
-        int odin = 0;
-        int dva = 0;
-        int tri = 0;
+        float odin = 0;
+        float dva = 0;
+        float tri = 0;
         int mas[] = new int[razmer];
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (int) (Math.random() * 200);
 
         }
         for (int i = 0; i < mas.length; i++) {
-            if (mas[i] > 0 && mas[i] <= 9) {
+            if (mas[i] >= 0 && mas[i] <= 9) {
                 odin++;
             }
             if (mas[i] >= 10 && mas[i] <= 99){
@@ -238,9 +238,9 @@ public class Shkurenko_8 {
                 tri++;
             }
         }
-        System.out.println(odin);
-        System.out.println(dva);
-        System.out.println(tri);
+        System.out.println(((float)((100*odin)/razmer)));
+        System.out.println(((float)((100*dva)/razmer)));
+        System.out.println(((float)((100*tri)/razmer)));
 
     }
         /*
