@@ -126,11 +126,12 @@ public class Shkurenko_8 {
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (int) (Math.random() * 40 - 10);
             System.out.println(i + "  " + mas[i]);
-            if (mas[i] < 0){
-            temp = i;
-        }
+            if (mas[i] < 0) {
+                temp = i;
+            }
 
-        System.out.println("Сумма = " + sum);
+            System.out.println("Сумма = " + sum);
+        }
     }
     /*
         7.	Создать массив из 20 случайных чисел в диапазоне от -30 до 10. Написать программу, определяющую сумму элементов массива, находящихся в массиве до первого положительного элемента.
