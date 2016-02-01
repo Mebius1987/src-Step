@@ -167,6 +167,8 @@ public class Shkurenko_8 {
         */
         int razmer = 20;
         int min, max;
+        int mini = 0;
+        int maxi = 0;
         int mas[] = new int[razmer];
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (int) (Math.random() * 100);
@@ -176,18 +178,18 @@ public class Shkurenko_8 {
         for (int i = 0; i < mas.length; i++) {
             if (mas[i] < min) {
                 min = mas[i];
+                mini = i;
             }
-
         }
         max = mas[0];
         for (int i = 0; i < mas.length; i++) {
             if (mas[i] > max) {
                 max = mas[i];
+                maxi = i;
             }
-
         }
-        System.out.println(min);
-        System.out.println(max);
+        System.out.println("Минимальное значение = " + min + ", его порядковый номер = " + mini);
+        System.out.println("Максимальное значение = " + max + ", его порядковый номер = " + maxi);
     }
     /*
         9.	Создать массив на 100 вещественных чисел. Определить, сколько элементов массива не имеют вещественной части.
