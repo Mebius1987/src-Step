@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task5();
+        task4();
     }
 
     public static void task1() {
@@ -79,13 +79,13 @@ public class Shkurenko_8 {
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (char) (Math.random() * 96 + 33);
             //System.out.println(i + "  " + mas[i]);
-            if ((int) mas[i] >= 48 && (int) mas[i] < 57) {
+            if (Character.isDigit(mas[a]))
                 temps++;
 
-            } else if ((int) mas[i] >= 97 && (int) mas[i] < 122) {
+             if (Character.isLetter(mas[a]))
                 bukva++;
 
-            } else
+             if (Character.isSpaceChar(mas[a]))
                 znak++;
 
         }
