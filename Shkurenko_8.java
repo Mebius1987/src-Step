@@ -305,10 +305,16 @@ public class Shkurenko_8 {
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (int) (Math.random() * 100 - 50);
         }
-        System.out.println(Arrays.toString(mas));
-        int masa [] = new int[razmer];
-        System.arraycopy(mas, 0, masa, 0, mas.length);
-        Arrays.sort(masa);
+        int masa[] = new int[razmer];
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] > 0) {
+                System.arraycopy(mas, i, masa, i, 1);
+            } else if (mas[i] == 0) {
+                System.arraycopy(mas, i, masa, i, 1);
+            } else if (mas[i] < 0) {
+                System.arraycopy(mas, i, masa, i, 1);
+            }
+        }
         System.out.println(Arrays.toString(masa));
 
     }
