@@ -119,23 +119,26 @@ public class Shkurenko_8 {
         6.	Создать массив из 20 случайных чисел в диапазоне от -10 до 30. Написать программу, определяющую сумму элементов
          массива, находящихся в массиве после первого отрицательного элемента.
         */
-        int razmer = 20;
+        int razmer = 5;
         int mas[] = new int[razmer];
         int temp = 0;
-        int sum = 0;
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (int) (Math.random() * 40 - 10);
-            System.out.println(i + "  " + mas[i]);
+            //System.out.println(i + "  " + mas[i]);
         }
-        for (int j = 0; j < mas.length; j++) {
-            if (mas[j] < 0) {
-                temp = j;
-                break;
-            }
-
-            System.out.println("Сумма = " + temp);
+        System.out.println(Arrays.toString(mas));
+        boolean found = false;
+        int sum = 0;
+        for (int i = 0; i < mas.length; i++)
+        {
+            if (!found) found = mas[i] < 0;
+            if (!found) continue;
+            System.out.println(mas[i]);
+            sum+=mas[i];
         }
+        System.out.println("Сумма = " + sum);
     }
+
     /*
         7.	Создать массив из 20 случайных чисел в диапазоне от -30 до 10. Написать программу, определяющую сумму элементов массива, находящихся в массиве до первого положительного элемента.
         8.	Создать массив из 20 случайных чисел. Определить минимальный и максимальный элемент массива (вывести значение и порядковый номер).
