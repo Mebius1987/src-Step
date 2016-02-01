@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task4();
+        task7();
     }
 
     public static void task1() {
@@ -81,11 +81,10 @@ public class Shkurenko_8 {
             System.out.println(i + "  " + mas[i]);
             if (Character.isDigit(mas[i])) {
                 cifra++;
-            }
-            else if (Character.isLetter(mas[i])) {
+            } else if (Character.isLetter(mas[i])) {
                 bukva++;
-            }else
-            znak++;
+            } else
+                znak++;
 
 
         }
@@ -121,7 +120,7 @@ public class Shkurenko_8 {
         6.	Создать массив из 20 случайных чисел в диапазоне от -10 до 30. Написать программу, определяющую сумму элементов
          массива, находящихся в массиве после первого отрицательного элемента.
         */
-        int razmer = 5;
+        int razmer = 20;
         int mas[] = new int[razmer];
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (int) (Math.random() * 40 - 10);
@@ -134,15 +133,35 @@ public class Shkurenko_8 {
                 found = mas[i] < 0;
                 continue;
             }
-            System.out.println(mas[i]);
+            //System.out.println(mas[i]);
             sum += mas[i];
 
         }
         System.out.println("Сумма = " + sum);
     }
 
+    public static void task7() {
     /*
-        7.	Создать массив из 20 случайных чисел в диапазоне от -30 до 10. Написать программу, определяющую сумму элементов массива, находящихся в массиве до первого положительного элемента.
+        7.	Создать массив из 20 случайных чисел в диапазоне от -30 до 10. Написать программу, определяющую сумму элементов массива, находящихся
+        в массиве до первого положительного элемента.
+        */
+        int razmer = 5;
+        int mas[] = new int[razmer];
+        for (int i = 0; i < mas.length; i++) {
+            mas[i] = (int) (Math.random() * 40 - 30);
+        }
+        System.out.println(Arrays.toString(mas));
+        int sum = 0;
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] > 0) {
+                break;
+            }
+            sum += mas[i];
+        }
+        System.out.println("Сумма = " + sum);
+    }
+
+        /*
         8.	Создать массив из 20 случайных чисел. Определить минимальный и максимальный элемент массива (вывести значение и порядковый номер).
         9.	Создать массив на 100 вещественных чисел. Определить, сколько элементов массива не имеют вещественной части.
         10.	Создать массив из 200 случайных чисел в диапазоне от 0 до 200. Определить количество одноразрядных, двухразрядных и трёхразрядных чисел в процентном отношении.
