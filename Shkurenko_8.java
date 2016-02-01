@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task6();
+        task5();
     }
 
     public static void task1() {
@@ -96,7 +96,8 @@ public class Shkurenko_8 {
 
     public static void task5() {
         /*
-        5.	Написать программу, которая предлагает пользователю ввести число, и затем подсчитывает, сколько раз это число встречается в массиве на 100 случайных элементов.
+        5.	Написать программу, которая предлагает пользователю ввести число, и затем подсчитывает,
+        сколько раз это число встречается в массиве на 100 случайных элементов.
         */
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите число для поиска в массиве");
@@ -106,11 +107,12 @@ public class Shkurenko_8 {
         int mas[] = new int[dlina];
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (int) (Math.random() * 100);
-            //System.out.println(i + "  " + mas[i]);
+        }
+        for (int i = 0; i < mas.length; i++) {
             if (number == mas[i]) {
                 kol++;
             }
-        }
+    }
         System.out.println("Число встречается в массиве на 100 случайных элементов " + kol);
     }
 
@@ -121,20 +123,20 @@ public class Shkurenko_8 {
         */
         int razmer = 5;
         int mas[] = new int[razmer];
-        int temp = 0;
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (int) (Math.random() * 40 - 10);
-            //System.out.println(i + "  " + mas[i]);
         }
         System.out.println(Arrays.toString(mas));
         boolean found = false;
         int sum = 0;
-        for (int i = 0; i < mas.length; i++)
-        {
-            if (!found) found = mas[i] < 0;
-            if (!found) continue;
+        for (int i = 0; i < mas.length; i++) {
+            if (!found) {
+                found = mas[i] < 0;
+                continue;
+            }
             System.out.println(mas[i]);
-            sum+=mas[i];
+            sum += mas[i];
+
         }
         System.out.println("Сумма = " + sum);
     }
