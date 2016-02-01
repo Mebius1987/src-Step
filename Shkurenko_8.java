@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task9();
+        task10();
     }
 
     public static void task1() {
@@ -202,7 +202,7 @@ public class Shkurenko_8 {
         int a = 0;
         float mas[] = new float[razmer];
         for (int i = 0; i < mas.length; i++) {
-            mas[i] =(float) Math.random() * 100;
+            mas[i] = (float) Math.random() * 100;
         }
         for (int i = 0; i < mas.length; i++) {
             if (mas[i] == (int) mas[i]) {
@@ -220,6 +220,27 @@ public class Shkurenko_8 {
         */
         int razmer = 200;
         int odin = 0;
+        int dva = 0;
+        int tri = 0;
+        int mas[] = new int[razmer];
+        for (int i = 0; i < mas.length; i++) {
+            mas[i] = (int) (Math.random() * 200);
+
+        }
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] > 0 && mas[i] <= 9) {
+                odin++;
+            }
+            if (mas[i] >= 10 && mas[i] <= 99){
+                dva++;
+            }
+            if(mas[i] >= 100 && mas[i] <= 200){
+                tri++;
+            }
+        }
+        System.out.println(odin);
+        System.out.println(dva);
+        System.out.println(tri);
 
     }
         /*
