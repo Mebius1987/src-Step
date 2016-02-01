@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task12();
+        task13();
     }
 
     public static void task1() {
@@ -277,29 +277,43 @@ public class Shkurenko_8 {
         for (int i = 0; i < a.length; i++) {
             a[i] = (int) (Math.random() * 100);
         }
-        System.out.println(Arrays.toString(a));
+        //System.out.println(Arrays.toString(a));
 
         int b[] = new int[razmer];
         for (int i = 0; i < b.length; i++) {
             b[i] = (int) (Math.random() * 100);
         }
-        System.out.println(Arrays.toString(b));
+        //System.out.println(Arrays.toString(b));
         int j = 0;
         int g = 0;
         int c[] = new int[razmer * 2];
         for (int i = 0; i < c.length; i++, j++, g++) {
-                c[i] = a[j];
+            c[i] = a[j];
             i++;
-                c[i] = b[g];
-            }
-        System.out.println(Arrays.toString(c));
+            c[i] = b[g];
         }
+        System.out.println(Arrays.toString(c));
+    }
 
+    public static void task13() {
+    /*
+    13.	Написать программу, копирующую один массив в другой следующим образом: сначала копируются последовательно все
+    элементы, большие 0, затем последовательно все элементы, равные 0, а затем последовательно все элементы, меньшие 0.
+    */
+        int razmer = 10;
+        int mas[] = new int[razmer];
+        for (int i = 0; i < mas.length; i++) {
+            mas[i] = (int) (Math.random() * 100 - 50);
+        }
+        System.out.println(Arrays.toString(mas));
+        int masa [] = new int[razmer];
+        System.arraycopy(mas, 0, masa, 0, mas.length);
+        Arrays.sort(masa);
+        System.out.println(Arrays.toString(masa));
 
-
+    }
 
     /*
-    13.	Написать программу, копирующую один массив в другой следующим образом: сначала копируются последовательно все элементы, большие 0, затем последовательно все элементы, равные 0, а затем последовательно все элементы, меньшие 0.
     14.	Даны 2 массива размерности M и N соответственно. Необходимо переписать в третий массив общие элементы первых двух массивов, без повторений.
     15.	Даны 2 массива размерности M и N соответственно. Необходимо переписать в третий массив те элементы первого массива, которых нет во втором массиве,  без повторений.
     16.	Реализовать программу-лотерею. Программа загадывает 5 случайных неповторяющихся чисел в диапазоне от 1 до 42, но не показывает их на экран. Пользователь пытается их угадать – вводит какие-то свои 5 чисел с клавиатуры. Назначить призы за совпадения. Например, если пользователь угадал три числа - приз 100 кредитов, если 4 - 500 кредитов, если 5 – 2500 кредитов. И в целом, какова вероятность того, что пользователь угадает все 5 чисел?
@@ -329,12 +343,12 @@ public class Shkurenko_8 {
             srs += sr[i];
         }
         float maxs = 0;
-        for (int i = 0; i < max.length; i++){
+        for (int i = 0; i < max.length; i++) {
             maxs += max[i];
         }
-        System.out.println("Среднегодовая температура минимальная = " + mins/12);
-        System.out.println("Среднегодовая температура средняя = " + srs/12);
-        System.out.println("Среднегодовая температура максимальная = " + maxs/12);
+        System.out.println("Среднегодовая температура минимальная = " + mins / 12);
+        System.out.println("Среднегодовая температура средняя = " + srs / 12);
+        System.out.println("Среднегодовая температура максимальная = " + maxs / 12);
     }
 }
 
