@@ -160,16 +160,34 @@ public class Shkurenko_8 {
         }
         System.out.println("Сумма = " + sum);
     }
+
     public static void task8() {
         /*
         8.	Создать массив из 20 случайных чисел. Определить минимальный и максимальный элемент массива (вывести значение и порядковый номер).
         */
         int razmer = 20;
+        int min, max;
         int mas[] = new int[razmer];
-        for (int i = 0;i < mas.length; i++){
-            mas[i] = (int) (Math.random()*100);
+        for (int i = 0; i < mas.length; i++) {
+            mas[i] = (int) (Math.random() * 100);
         }
-        //System.out.println(Arrays.toString(mas));
+        System.out.println(Arrays.toString(mas));
+        min = mas[0];
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] < min) {
+                min = mas[i];
+            }
+
+        }
+        max = mas[0];
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] > max) {
+                max = mas[i];
+            }
+
+        }
+        System.out.println(min);
+        System.out.println(max);
     }
     /*
         9.	Создать массив на 100 вещественных чисел. Определить, сколько элементов массива не имеют вещественной части.
