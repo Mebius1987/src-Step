@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task24();
+        task12();
     }
 
     public static void task1() {
@@ -284,18 +284,19 @@ public class Shkurenko_8 {
             b[i] = (int) (Math.random() * 100);
         }
         System.out.println(Arrays.toString(b));
-
+        int j = 0;
+        int g = 0;
         int c[] = new int[razmer * 2];
-        for (int i = 0; i < c.length; i++) {
-            if (i % 2 == 1) {
-                c[i] = a[0];
-            } else if (i % 2 == 0) {
-                c[i] = b[0];
+        for (int i = 0; i < c.length; i++, j++, g++) {
+                c[i] = a[j];
+            i++;
+                c[i] = b[g];
             }
-        }
         System.out.println(Arrays.toString(c));
+        }
 
-    }
+
+
 
     /*
     13.	Написать программу, копирующую один массив в другой следующим образом: сначала копируются последовательно все элементы, большие 0, затем последовательно все элементы, равные 0, а затем последовательно все элементы, меньшие 0.
