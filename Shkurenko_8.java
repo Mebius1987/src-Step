@@ -335,23 +335,30 @@ public class Shkurenko_8 {
     /*
     14.	Даны 2 массива размерности M и N соответственно. Необходимо переписать в третий массив общие элементы первых двух массивов, без повторений.
     */
+
         Scanner sc = new Scanner(System.in);
         int razmerM = sc.nextInt();
         int masM[] = new int[razmerM];
         for (int i = 0; i < masM.length; i++) {
             masM[i] = (int) (Math.random() * 50);
         }
+        System.out.println(Arrays.toString(masM));
         int razmerN = sc.nextInt();
         int masN[] = new int[razmerN];
         for (int i = 0; i < masN.length; i++) {
             masN[i] = (int) (Math.random() * 50);
         }
+        System.out.println(Arrays.toString(masN));
+
         int mas[] = new int[razmerM + razmerN];
-        for (int i = 0; i < mas.length; i++){
-            if (masM [i] == masN [i]);
+        for (int j = 0; j < masN.length; j++) {
+            for (int i = 0; i < masM.length; i++) {
+                if (masM[i] == masN[j] && masM[i] != mas[j]) {
+                    System.arraycopy(masM, i, mas, j, 1);
+                }
+            }
         }
-
-
+        System.out.println(Arrays.toString(mas));
     }
 
     /*

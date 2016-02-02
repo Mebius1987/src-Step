@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Shkurenko_7 {
     public static void main(String[] args) {
-        task10();
+        task11();
     }
 
 
@@ -78,8 +78,32 @@ public class Shkurenko_7 {
 
         }
     }
+
+    public static void task11() {
 /*
 11.	Показать на экране все числа Армстронга в диапазоне от 0 до 10.000.000.
+*/
+
+        int konec = 100;
+        int temp = 1;//считаем сколько цифр
+        int sum = 0;
+        for (int i = 0; konec / i > 0; i *= 10) {
+            temp++;
+        }
+        for (int i = 0; i < konec; i++) {
+            //for (int i = 0; i < konec; i++) {
+                sum += Math.pow(i % 10, temp);
+                temp = temp / 10;
+
+                if (sum == i) {
+                    System.out.println(i);
+                //}
+            }
+        }
+
+    }
+
+/*
 12.	Показать на экране все совершенные числа в диапазоне от 0 до 10.000.000.
 13.	Показать на экране все числа Фибоначчи в диапазоне от 0 до 10.000.000.
 
