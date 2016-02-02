@@ -85,9 +85,9 @@ public class Shkurenko_7 {
 */
 
         int konec = 100;
-        int temp = 1;//считаем сколько цифр
+        int temp = 0;//считаем сколько цифр
         int sum = 0;
-        for (int i = 0; konec / i > 0; i *= 10) {
+        for (int i = 1; konec / i > 0; i *= 10) {
             temp++;
         }
         for (int i = 0; i < konec; i++) {
