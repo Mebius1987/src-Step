@@ -1,11 +1,10 @@
 package Step;
-
 /**
  * Created by Mebius on 02.02.2016.
  */
 public class Shkurenko_8_1 {
     public static void main(String[] args) {
-        task11();
+        task1();
     }
 
     /*

@@ -65,15 +65,17 @@ public class Shkurenko_7 {
     /*
 10.	Написать программу, которая выводит на экран все простые числа в диапазоне от 2 до 10.000.000.
 */
-        int konec = 10;
+        int konec = 10000000;
 
+        metka:
         for (int i = 2; i < konec; i++) {
-            for (int j = 1; j < i; j++) {
-                if (i % j == 0) {
-                    System.out.println(i);
-
-                }
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0)
+                    continue metka;
             }
+            System.out.println(i);
+
+
         }
     }
 /*
