@@ -84,22 +84,27 @@ public class Shkurenko_7 {
 11.	Показать на экране все числа Армстронга в диапазоне от 0 до 10.000.000.
 */
 
-        int konec = 100;
+        int konec = 100000000;
         int temp = 0;//считаем сколько цифр
         int sum = 0;
-        for (int i = 1; konec / i > 0; i *= 10) {
-            temp++;
-        }
         for (int i = 0; i < konec; i++) {
-            //for (int i = 0; i < konec; i++) {
-                sum += Math.pow(i % 10, temp);
-                temp = temp / 10;
-
-                if (sum == i) {
-                    System.out.println(i);
-                //}
+            for (int j = 1; i / j > 0; j *= 10) {
+                temp++;
             }
+            int cisl = i;
+            for (int a = 0; a < temp; a++) {
+                sum += Math.pow(cisl % 10, temp);
+                cisl /=10;
+
+            }
+            if (sum == i) {
+                System.out.println(sum);
+
+            }
+            sum = 0;
+            temp = 0;
         }
+
 
     }
 
