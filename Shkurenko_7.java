@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Shkurenko_7 {
     public static void main(String[] args) {
-        task11();
+        task13();
     }
 
 
@@ -84,7 +84,7 @@ public class Shkurenko_7 {
 11.	Показать на экране все числа Армстронга в диапазоне от 0 до 10.000.000.
 */
 
-        int konec = 100000000;
+        int konec = 10000000;
         int temp = 0;//считаем сколько цифр
         int sum = 0;
         for (int i = 0; i < konec; i++) {
@@ -94,7 +94,7 @@ public class Shkurenko_7 {
             int cisl = i;
             for (int a = 0; a < temp; a++) {
                 sum += Math.pow(cisl % 10, temp);
-                cisl /=10;
+                cisl /= 10;
 
             }
             if (sum == i) {
@@ -108,15 +108,61 @@ public class Shkurenko_7 {
 
     }
 
+    public static void task12() {
 /*
 12.	Показать на экране все совершенные числа в диапазоне от 0 до 10.000.000.
-13.	Показать на экране все числа Фибоначчи в диапазоне от 0 до 10.000.000.
+*/
+        int konec = 10000000;
+        int sum = 0;
+        for (int i = 1; i < konec; i++) {
+            sum = 0;
+            for (int j = 1; j < i; j++) {
+                if (i % j == 0) {
+                    sum += j;
+                }
+                if (i == sum) {
+                    System.out.println(sum);
+                }
 
+            }
+        }
+
+    }
+
+    public static void task13() {
+/*
+13.	Показать на экране все числа Фибоначчи в диапазоне от 0 до 10.000.000.
+*/
+        int konec = 10000000;
+        int a = 0;
+        int b = 1;
+        int sum_fib;
+        for (int i = 0; i < konec; i++) {
+            sum_fib = a + b;
+            a = b;
+            b = sum_fib;
+            System.out.print(sum_fib + ", ");
+            if (sum_fib > konec)
+                return;
+        }
+    }
+
+
+    public static void task14() {
+/*
 15.	Вывести лестницу из отрезков определённой длины. Длина (например, 14) и количество ступенек (например, 4) указывается с клавиатуры.
 	**************
 	   **************
 	      **************
 	         **************
+*/
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите длину ступенек");
+        int dlina = sc.nextInt();
+        System.out.println();
+        int visota = sc.nextInt();
+    }
+        /*
 16.	Показать на экране лесенку. Количество ступенек (например, 5) указывает пользователь.
 
 
