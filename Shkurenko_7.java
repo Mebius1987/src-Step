@@ -1,11 +1,9 @@
 package Step;
 
-import java.util.Scanner;
-
 
 public class Shkurenko_7 {
     public static void main(String[] args) {
-        task13();
+        task15();
     }
 
 
@@ -148,7 +146,7 @@ public class Shkurenko_7 {
     }
 
 
-    public static void task14() {
+    public static void task15() {
 /*
 15.	Вывести лестницу из отрезков определённой длины. Длина (например, 14) и количество ступенек (например, 4) указывается с клавиатуры.
 	**************
@@ -156,11 +154,27 @@ public class Shkurenko_7 {
 	      **************
 	         **************
 */
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Введите длину ступенек");
-        int dlina = sc.nextInt();
-        System.out.println();
-        int visota = sc.nextInt();
+        //Scanner sc = new Scanner(System.in);
+        //System.out.println("Введите длину ступенек");
+        //int dlina = sc.nextInt();
+        //System.out.println("Введите количество ступенек");
+        //int visota = sc.nextInt();
+        int dlina = 14;
+        int visota = 4;
+        int probel = 0;
+        for (int i = 0; i < visota; i++) {
+            System.out.print("");
+            probel += 3;
+            for (int j = 0; j < dlina + probel; j++) {
+                if (j > 0) {
+                    System.out.print("*");
+
+                } else
+                    System.out.print(" ");
+            }
+            System.out.println();
+
+        }
     }
         /*
 16.	Показать на экране лесенку. Количество ступенек (например, 5) указывает пользователь.
