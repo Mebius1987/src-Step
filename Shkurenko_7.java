@@ -1,6 +1,8 @@
 package Step;
 
 
+import java.util.Scanner;
+
 public class Shkurenko_7 {
     public static void main(String[] args) {
         task15();
@@ -154,26 +156,22 @@ public class Shkurenko_7 {
 	      **************
 	         **************
 */
-        //Scanner sc = new Scanner(System.in);
-        //System.out.println("Введите длину ступенек");
-        //int dlina = sc.nextInt();
-        //System.out.println("Введите количество ступенек");
-        //int visota = sc.nextInt();
-        int dlina = 14;
-        int visota = 4;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите длину ступенек");
+        int dlina = sc.nextInt();
+        System.out.println("Введите количество ступенек");
+        int visota = sc.nextInt();
         int probel = 0;
         for (int i = 0; i < visota; i++) {
-            System.out.print("");
+            System.out.println("");
             probel += 3;
-            for (int j = 0; j < dlina + probel; j++) {
-                if (j > 0) {
-                    System.out.print("*");
-
-                } else
-                    System.out.print(" ");
+            for (int j = 0; j < probel; j++) {
+                System.out.print(" ");
             }
-            System.out.println();
+            for (int a = 0; a < dlina; a++) {
+                System.out.print("*");
 
+            }
         }
     }
         /*
