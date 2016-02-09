@@ -363,8 +363,8 @@ public class Shkurenko_8 {
         for (int i = 0; i < max.length; i++) {
             boolean found = false; // сделал вид что забыл удалить ;)
             for (int j = 0; j < min.length; j++) {
-                if (max[i] == min[i]) {
-                    max[i] = work[i];
+                if (max[i] == min[j]) {
+                    max[i] = work[coiunt];
                     coiunt++;
                 }
 
@@ -376,6 +376,8 @@ public class Shkurenko_8 {
 
         }
         System.out.println(Arrays.toString(work));
+        int masr[] = new int[coiunt];
+
         //int mas[] = new int[coiunt];
     }
 
