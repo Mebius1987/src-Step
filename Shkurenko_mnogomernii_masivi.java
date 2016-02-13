@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Shkurenko_mnogomernii_masivi {
     public static void main(String[] args) {
-        task1();
+        task3();
     }
 
     public static void task1() {
@@ -47,7 +47,30 @@ public class Shkurenko_mnogomernii_masivi {
         3.	Дан двумерный массив размерностью M х N, заполненный случайными числами из диапазона от -10 до 10.
         Определить количество положительных, отрицательных и нулевых элементов.
                 */
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        int nul = 0;
+        int otr = 0;
+        int pol = 0;
+        int[][] mas = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                mas[i][j] = (int) (Math.random() * 20 -10);
+                if (mas[i][j] > 0) {
+                    pol ++;
+                }
+                if (mas[i][j] < 0) {
+                    otr ++;
+                }
+                if (mas[i][j]==0){
+                    nul++;
+                }
+            }
+            System.out.println(Arrays.toString(mas[i]));
 
+        }
+        System.out.println("положительных элементов = " + pol + " отрицательных элементов = " + otr + " нулевых элементов = " + nul);
 
     }
 
