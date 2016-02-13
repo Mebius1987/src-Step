@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Shkurenko_mnogomernii_masivi {
     public static void main(String[] args) {
-        task4();
+        task5();
     }
 
     public static void task1() {
@@ -39,7 +39,9 @@ public class Shkurenko_mnogomernii_masivi {
     }
 
     /*
-        2.	Дан двумерный массив размерностью M х N, заполненный случайными числами из диапазона от 0 до 20. Определить сумму элементов, расположенных на главной диагонали, а также сумму элементов, расположенных на побочной диагонали.
+        2.	Дан двумерный массив размерностью M х N, заполненный случайными числами из диапазона от 0 до 20.
+        Определить сумму элементов, расположенных на главной диагонали,
+        а также сумму элементов, расположенных на побочной диагонали.
 
         */
     public static void task3() {
@@ -73,6 +75,7 @@ public class Shkurenko_mnogomernii_masivi {
         System.out.println("положительных элементов = " + pol + " отрицательных элементов = " + otr + " нулевых элементов = " + nul);
 
     }
+
     public static void task4() {
     /*
     4.	Дан двумерный массив размерностью M х N, заполненный случайными числами из диапазона от 0 до 20.
@@ -98,25 +101,38 @@ public class Shkurenko_mnogomernii_masivi {
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (mas[i][j]==mas[stolb][j]){
+                if (mas[i][j] == mas[stolb][j]) {
                     sumn += mas[i][j];
                 }
-                if (mas[i][j]==mas[i][stroka]){
+                if (mas[i][j] == mas[i][stroka]) {
                     summ += mas[i][j];
                 }
             }
 
         }
-        System.out.println("Сумма по столбцу " + stolb + "  = " + summ + " сумма по строке " + stroka + " = " + sumn  );
+        System.out.println("Сумма по столбцу " + stolb + "  = " + summ + " сумма по строке " + stroka + " = " + sumn);
 
-
-}
-    public static void task5() {
-    /*
-    5.	Заполнить массив M x N двузначными числами так, чтобы первая цифра указывала  номер строки, а вторая – номер столбца.
-    */
 
     }
+
+    public static void task5() {
+    /*
+    5.	Заполнить массив M x N двузначными числами так, чтобы первая цифра указывала  номер строки,
+     а вторая – номер столбца.
+    */
+        Scanner sc = new Scanner(System.in);
+        int m = 5;
+        int n = 5;
+        int[][] mas = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++){
+                mas[i][j]= (i + 1) * 10 + j + 1;
+
+            }
+            System.out.println(Arrays.toString(mas[i]));
+        }
+    }
+
     /*
     6.	В двумерном массиве размерности M x N поменять местами чётные строки с нечётными.
 */
