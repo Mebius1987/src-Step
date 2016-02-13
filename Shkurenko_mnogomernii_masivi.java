@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Shkurenko_mnogomernii_masivi {
     public static void main(String[] args) {
-        task3();
+        task4();
     }
 
     public static void task1() {
@@ -56,14 +56,14 @@ public class Shkurenko_mnogomernii_masivi {
         int[][] mas = new int[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                mas[i][j] = (int) (Math.random() * 20 -10);
+                mas[i][j] = (int) (Math.random() * 20 - 10);
                 if (mas[i][j] > 0) {
-                    pol ++;
+                    pol++;
                 }
                 if (mas[i][j] < 0) {
-                    otr ++;
+                    otr++;
                 }
-                if (mas[i][j]==0){
+                if (mas[i][j] == 0) {
                     nul++;
                 }
             }
@@ -73,9 +73,44 @@ public class Shkurenko_mnogomernii_masivi {
         System.out.println("положительных элементов = " + pol + " отрицательных элементов = " + otr + " нулевых элементов = " + nul);
 
     }
-
+    public static void task4() {
     /*
     4.	Дан двумерный массив размерностью M х N, заполненный случайными числами из диапазона от 0 до 20. Определить сумму по каждой строке и по каждому столбцу массива.
+    */
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите сколько будет столбецов и строк");
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        int sumn = 0;
+        int summ = 0;
+        System.out.println("Введите какой столбец посчитать ");
+        int stolb = sc.nextInt();
+        System.out.println("Введите какую строку посчитать ");
+        int stroka = sc.nextInt();
+        int[][] mas = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                mas[i][j] = (int) (Math.random() * 20);
+            }
+            System.out.println(Arrays.toString(mas[i]));
+        }
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (mas[i][j]==mas[stolb][j]){
+                    sumn += mas[i][j];
+                }
+                if (mas[i][j]==mas[i][stroka]){
+                    summ += mas[i][j];
+                }
+            }
+
+        }
+        System.out.println("Сумма по столбцу " + stolb + "  = " + summ + " сумма по строке " + stroka + " = " + sumn  );
+
+
+}
+    /*
     5.	Заполнить массив M x N двузначными числами так, чтобы первая цифра указывала  номер строки, а вторая – номер столбца.
     6.	В двумерном массиве размерности M x N поменять местами чётные строки с нечётными.
 */
