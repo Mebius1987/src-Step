@@ -121,8 +121,8 @@ public class Shkurenko_mnogomernii_masivi {
      а вторая – номер столбца.
     */
         Scanner sc = new Scanner(System.in);
-        int m = 5;
-        int n = 5;
+        int m = sc.nextInt();
+        int n = sc.nextInt();
         int[][] mas = new int[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++){
