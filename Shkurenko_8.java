@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task14();
+        task24();
     }
 
     public static void task1() {
@@ -364,11 +364,12 @@ public class Shkurenko_8 {
             boolean found = false; // сделал вид что забыл удалить ;)
             for (int j = 0; j < min.length; j++) {
                 if (max[i] == min[j]) {
-                    max[i] = work[coiunt];
+                    work[coiunt] = max[i];
                     coiunt++;
                 }
 
             }
+            int finish[] = new int[coiunt];
 
 
 // тут создаем результирующий массив (размер которого будет равен количеству
@@ -428,7 +429,7 @@ public class Shkurenko_8 {
         24.написать программу, которая рассчитает среднегодовую температуру (среднюю, максимальную и минимальную),
         по предоставленным данным. Между какими двумя месяцами года происходит максимальный перепад средних температур?
         */
-        double min[] = {-26.2, -28, -16, -5.9, 0.3, 5.2, 7.5, 7, .9, -0.8, -13.3, -14.6, -19.6};
+        double min[] = {-26.2, -28, -16, -5.9, 0.3, 5.2, 7.5, 7, 0.9, -0.8, -13.3, -14.6, -19.6};
         double sr[] = {-0.5, -0.2, 3.5, 9.4, 15.6, 20, 22.6, 22.3, 17.2, 11.6, 5.7, 1.1};
         double max[] = {15.1, 18.6, 24.1, 29.4, 33.3, 35.6, 39.3, 38, 32.4, 30.5, 26, 16.3};
         float mins = 0;
@@ -446,6 +447,14 @@ public class Shkurenko_8 {
         System.out.println("Среднегодовая температура минимальная = " + mins / 12);
         System.out.println("Среднегодовая температура средняя = " + srs / 12);
         System.out.println("Среднегодовая температура максимальная = " + maxs / 12);
-    }
-}
+        double minx = 0;
+        double b = minx;
+        for (int i = 0; i < min.length-1; i++) {
+                if ((min[i] - min[i + 1] < b)) {
+                    b = min[i] - min[i+1];
+                }
+            }
+        System.out.println(b);
+        }
 
+    }
