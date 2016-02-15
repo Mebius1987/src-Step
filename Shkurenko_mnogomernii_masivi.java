@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Shkurenko_mnogomernii_masivi {
     public static void main(String[] args) {
-        task5();
+        task4();
     }
 
     public static void task1() {
@@ -87,10 +87,10 @@ public class Shkurenko_mnogomernii_masivi {
         int n = sc.nextInt();
         int sumn = 0;
         int summ = 0;
-        System.out.println("Введите какой столбец посчитать ");
-        int stolb = sc.nextInt();
-        System.out.println("Введите какую строку посчитать ");
-        int stroka = sc.nextInt();
+        //System.out.println("Введите какой столбец посчитать ");
+        //int stolb = sc.nextInt();
+        //System.out.println("Введите какую строку посчитать ");
+        //int stroka = sc.nextInt();
         int[][] mas = new int[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -100,17 +100,22 @@ public class Shkurenko_mnogomernii_masivi {
         }
 
         for (int i = 0; i < m; i++) {
+            sumn = 0;
+            summ = 0;
             for (int j = 0; j < n; j++) {
-                if (mas[i][j] == mas[stolb][j]) {
+                if (mas[i][j] == mas[i][j]) {
                     sumn += mas[i][j];
                 }
-                if (mas[i][j] == mas[i][stroka]) {
+                if (mas[i][j] == mas[i][j]) {
                     summ += mas[i][j];
                 }
+
+
             }
+            System.out.println("Столбцы сумма =  " + summ + ", строки сумма =  " + sumn);
 
         }
-        System.out.println("Сумма по столбцу " + stolb + "  = " + summ + " сумма по строке " + stroka + " = " + sumn);
+        //System.out.println("Сумма по столбцу " + stolb + "  = " + summ + " сумма по строке " + stroka + " = " + sumn);
 
 
     }
@@ -125,17 +130,22 @@ public class Shkurenko_mnogomernii_masivi {
         int n = sc.nextInt();
         int[][] mas = new int[m][n];
         for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++){
-                mas[i][j]= (i + 1) * 10 + j + 1;
+            for (int j = 0; j < n; j++) {
+                mas[i][j] = (i + 1) * 10 + j + 1;
 
             }
             System.out.println(Arrays.toString(mas[i]));
         }
     }
 
+    public static void task6() {
     /*
     6.	В двумерном массиве размерности M x N поменять местами чётные строки с нечётными.
 */
+
+
+    }
+
     public static void task7() {
         /*
         7.	Дан двумерный массив размерностью M x N, заполненный случайными числами из диапазона от -100 до 100.
