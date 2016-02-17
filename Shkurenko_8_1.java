@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8_1 {
     public static void main(String[] args) {
-        task8();
+        task9();
     }
 
     /*
@@ -130,7 +130,7 @@ public class Shkurenko_8_1 {
 */
         int a = 0;
         int temp = 0;
-        for (int i = 3; i >=0; i--){
+        for (int i = 2; i >=0; i--){
             temp = (int) (Math.random() * 32);
             a |= (1 << temp);
         }
