@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8_1 {
     public static void main(String[] args) {
-        task7();
+        task8();
     }
 
     /*
@@ -117,14 +117,22 @@ public class Shkurenko_8_1 {
 /*
         8. Дано целое число типа short. Выведите его в битовой форме (16 бит).
   */
-
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите целое число A");
+        short a = sc.nextShort();
+        for (int i = 15; i >= 0; i--)
+            System.out.print((a >> i & 1));
     }
 
     public static void task9() {
 /*
         9. Есть переменная типа int (32 бита), равная нулю. Присвоить трём случайным битам значение 1. Показать получившееся значение переменной.
 */
+        int a = 0;
+        for (int i = 31; i >=0; i--){
 
+        }
+        System.out.println(a);
     }
 
     public static void task10() {
