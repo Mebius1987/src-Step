@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8_1 {
     public static void main(String[] args) {
-        task6();
+        task7();
     }
 
     /*
@@ -73,6 +73,7 @@ public class Shkurenko_8_1 {
         a |= (1 << n);
         System.out.println(a);
     }
+
     public static void task5() {
 /*
         5. Дано целое число A и натуральное число n. Выведите число, которое получается из числа A инвертированием n-го бита.
@@ -85,6 +86,7 @@ public class Shkurenko_8_1 {
         a ^= (1 << n);
         System.out.println(a);
     }
+
     public static void task6() {
         /*
         6. Дано целое число A и натуральное число n. Выведите число, которое состоит только из n последних бит числа A (то есть обнулите все биты числа A, кроме последних n).
@@ -94,16 +96,41 @@ public class Shkurenko_8_1 {
         int a = sc.nextInt();
         System.out.println("Введите натуральное число n");
         int n = sc.nextInt();
-        a ^= (1 >>> n);
+        a &= (1 << n) - 1;
         System.out.println(a);
     }
+
+    public static void task7() {
     /*
         7. Дано целое число A и натуральное число n. Выведите значение n-го бита числа A, то есть 0 или 1.
+*/
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите целое число A");
+        int a = sc.nextInt();
+        System.out.println("Введите натуральное число n");
+        int n = sc.nextInt();
+        a |= (n << n);
+        System.out.println(a);
+    }
 
+    public static void task8() {
+/*
         8. Дано целое число типа short. Выведите его в битовой форме (16 бит).
+  */
 
+    }
+
+    public static void task9() {
+/*
         9. Есть переменная типа int (32 бита), равная нулю. Присвоить трём случайным битам значение 1. Показать получившееся значение переменной.
+*/
 
+    }
+
+    public static void task10() {
+/*
         10. Сохранить в одной переменной типа int два значения типа short. Затем вытащить из переменной каждое из двух значений по отдельности.
 */
+    }
+
 }
