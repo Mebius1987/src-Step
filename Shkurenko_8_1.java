@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8_1 {
     public static void main(String[] args) {
-        task5();
+        task6();
     }
 
     /*
@@ -88,7 +88,16 @@ public class Shkurenko_8_1 {
     public static void task6() {
         /*
         6. Дано целое число A и натуральное число n. Выведите число, которое состоит только из n последних бит числа A (то есть обнулите все биты числа A, кроме последних n).
-
+*/
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите целое число A");
+        int a = sc.nextInt();
+        System.out.println("Введите натуральное число n");
+        int n = sc.nextInt();
+        a ^= (1 >>> n);
+        System.out.println(a);
+    }
+    /*
         7. Дано целое число A и натуральное число n. Выведите значение n-го бита числа A, то есть 0 или 1.
 
         8. Дано целое число типа short. Выведите его в битовой форме (16 бит).
