@@ -129,8 +129,10 @@ public class Shkurenko_8_1 {
         9. Есть переменная типа int (32 бита), равная нулю. Присвоить трём случайным битам значение 1. Показать получившееся значение переменной.
 */
         int a = 0;
-        for (int i = 31; i >=0; i--){
-
+        int temp = 0;
+        for (int i = 3; i >=0; i--){
+            temp = (int) (Math.random() * 32);
+            a |= (1 << temp);
         }
         System.out.println(a);
     }
