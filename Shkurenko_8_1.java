@@ -53,9 +53,12 @@ public class Shkurenko_8_1 {
         int a = sc.nextInt();
         System.out.println("Введите натуральное число n");
         double n = sc.nextInt();
-        int otvet = 0;
+        int mask = 0xFE;
+        for (int j = 0; j < n; n++)
+            a = a & mask;
+        mask <<= 1;
 
-        System.out.println("ответ = " + otvet);
+        System.out.println("ответ = " + a);
     }
 /*
         4. Дано целое число A и натуральное число n. Выведите число, которое получается из числа A установкой значения n-го бита в единицу.
