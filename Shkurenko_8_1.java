@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8_1 {
     public static void main(String[] args) {
-        task9();
+        task10();
     }
 
     /*
@@ -130,7 +130,7 @@ public class Shkurenko_8_1 {
 */
         int a = 0;
         int temp = 0;
-        for (int i = 2; i >=0; i--){
+        for (int i = 2; i >= 0; i--) {
             temp = (int) (Math.random() * 32);
             a |= (1 << temp);
         }
@@ -141,6 +141,12 @@ public class Shkurenko_8_1 {
 /*
         10. Сохранить в одной переменной типа int два значения типа short. Затем вытащить из переменной каждое из двух значений по отдельности.
 */
+        short temp = (short) (Math.random() * 32767);
+        short temp2 = (short) (Math.random() * 32767);
+        System.out.println(temp);
+        System.out.println(temp2);
+        int a = 0;
+
     }
 
 }
