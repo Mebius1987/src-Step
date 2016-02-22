@@ -1,5 +1,7 @@
 package Step;
 
+import java.util.Scanner;
+
 /**
  * Created by Mebius on 19.02.2016.
  */
@@ -12,8 +14,21 @@ public class Stroki {
     public static void task1() {
 //1.	Ввести с клавиатуры строку текста, а затем один символ.
 // Показать на экран индексы и количество совпадений (ищем вхождения символа в строку).
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();// вводим строку
+        String find = sc.next();// вводим что искать
+        int index = 0;
+        int kol = 0;
 
+        while ((index = a.indexOf(find, index)) != -1) {
+            System.out.println("Индекс " + index);
+            index++;
+            kol++;
+        }
+
+        System.out.println("Всего нашли " + find +  " = " + kol + " раза.");
     }
+
     public static void task2() {
         /*
         2.	Написать программу, подсчитывающую количество слов, а также гласных и согласных букв в строке,
