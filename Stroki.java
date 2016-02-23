@@ -1,13 +1,15 @@
 package Step;
 
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 /**
  * Created by Mebius on 19.02.2016.
  */
 public class Stroki {
     public static void main(String[] args) {
-        task1();
+        task2();
     }
 
 
@@ -26,7 +28,7 @@ public class Stroki {
             kol++;
         }
 
-        System.out.println("Всего нашли " + find +  " = " + kol + " раза.");
+        System.out.println("Всего нашли " + find + " = " + kol + " раза.");
     }
 
     public static void task2() {
@@ -44,6 +46,12 @@ public class Stroki {
 Других символов – 3
 
          */
+        Scanner sc = new Scanner(System.in);
+        String pred = sc.next();// вводим строку
+        int length = pred.length();
+        System.out.println("Длина строки = " + length);
+
+
     }
 
 }
