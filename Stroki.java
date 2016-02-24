@@ -47,11 +47,19 @@ public class Stroki {
 
          */
         Scanner sc = new Scanner(System.in);
-        String pred = sc.next();// вводим строку
-        int length = pred.length();
-        System.out.println("Длина строки = " + length);
+        String pred = sc.nextLine();// вводим строку
 
+        int length = pred.length();
+        System.out.println("Всего символов в строке текста – " + length + ", из них:");
+
+        String parts[] = pred.split(" ");
+        length = parts.length;
+        System.out.println("Всего символов в строке текста – " + length + ", из них:");
 
     }
-
 }
+
+
+
+
+
