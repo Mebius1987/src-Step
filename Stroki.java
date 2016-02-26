@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  */
 public class Stroki {
     public static void main(String[] args) {
-        task10();
+        task5();
     }
 
 
@@ -119,12 +119,13 @@ public class Stroki {
         String str = sc.nextLine();// вводим строку
         String slovo = sc.next();// ждем ввода слова
         int call = 0;
-        for (int i = 0; i < str.length(); i++) {
-            if (str.contains(slovo)) {
+        String[] tokens = str.split(" ");
+        for (int i = 0; i < tokens.length; i++) {
+            if (slovo.equalsIgnoreCase(tokens[i])) {
                 call++;
             }
         }
-        System.out.println(call);
+        System.out.println("Слово \"" + slovo + "\" содержится в строке \"" + str + "\" " + call + " раза");
     }
 
     public static void task6() {
@@ -136,7 +137,7 @@ public class Stroki {
             «free xxxxx»             => ЭТО СПАМ!
             «innocent rabbit»  => это не спам
 */
-        String[] badWords = {"XXX"};
+        String[] badWords = {"XXX, viagra"};
         boolean spam = false;
         String text = "мой телефон XXX";
         for (String word : badWords) {
@@ -147,17 +148,23 @@ public class Stroki {
         if (spam) {
             System.out.println("Это спам!");
         } else
-            System.out.println("Это спарта");
+            System.out.println("Это не спам");
     }
 
+    public static void task7() {
     /*
         7. Даётся стоимость некоторого товара в виде строки: "$120".
         Напишите программу, которая будет из такой строки выделять число-значение, в данном случае 120.
         Также предусмотреть варианты: "$ 120", "120 EUR", "120EUR", "120 USD", "120USD", "120 грн.", "120грн.", "120 грн", "120 грн.".
         Стоимость товара может быть от 0 до 1000000000. Требуется применить регулярные выражения.
+*/
 
-                8. Напишите программу, которая генерирует пароль указанной длины.
-    */
+
+    }
+
+    /*
+                    8. Напишите программу, которая генерирует пароль указанной длины.
+        */
     public static void task9() {
       /*
 
@@ -169,7 +176,8 @@ public class Stroki {
     Другие анаграммы: http://englishon-line.ru/anagrammyi-na-angliyskom.html
 */
     }
-        public static void task10 () {
+
+    public static void task10() {
 /*
             10. В языке Java принято первое слово,
             входящее в название переменной, записывать с маленькой латинской буквы,
@@ -183,96 +191,92 @@ public class Stroki {
              Идентификатор переменной должен вводиться с клавиатуры.
              Программа должна определить, с какого языка взята переменная, и переделать название в другой  язык.
 */
-            String a = "javaIdentifierSuperPuperTest";
+        String a = "javaIdentifierSuperPuperTest";
 
-            String b = "name";
+        String b = "name";
 
-            String c = "long_and_mnemonic_identifier_";
+        String c = "long_and_mnemonic_identifier_";
 
-            String d = "alex_Java";
+        String d = "alex_Java";
 
-            boolean firstLetterIsBig = false;
-            boolean hasBigLetter = false;
-            boolean hasProcherk = false;
+        boolean firstLetterIsBig = false;
+        boolean hasBigLetter = false;
+        boolean hasProcherk = false;
 
-            String test = c;
+        String test = c;
 
-            if (test.charAt(0) >= 'A' && test.charAt(0) <= 'Z') {
-                firstLetterIsBig = true;
-            }
+        if (test.charAt(0) >= 'A' && test.charAt(0) <= 'Z') {
+            firstLetterIsBig = true;
+        }
 
-            for (int i = 0; i < test.length(); i++) {
-                if (test.charAt(i) >= 'A' && test.charAt(i) <= 'Z') {
-                    hasBigLetter = true;
-                    break;
-                }
-            }
-
-            for (int i = 0; i < test.length(); i++) {
-                if (test.charAt(i) == '_') {
-                    hasProcherk = true;
-                    break;
-                }
-            }
-
-            System.out.println("First Big: " + firstLetterIsBig);
-            System.out.println("Has Big: " + hasBigLetter);
-            System.out.println("Has _: " + hasProcherk);
-
-            boolean isJava = false;
-            boolean isCpp = false;
-
-            if (firstLetterIsBig == false && hasBigLetter == true && hasProcherk == false) {
-                isJava = true;
-            } else if (firstLetterIsBig == false && hasBigLetter == false && hasProcherk == true) {
-                isCpp = true;
-            } else if (firstLetterIsBig == false && hasBigLetter == false && hasProcherk == false) {
-                isJava = true;
-                isCpp = true;
-            }
-
-            if (isJava && !isCpp) {
-                System.out.println("It's Java identifier!");
-
-                String original = test;
-                String result = "";
-                for (int i = 0; i < original.length(); i++) {
-                    if (original.charAt(i) >= 'a' && original.charAt(i) <= 'z') {
-                        result = result + original.charAt(i);
-                    }
-                    else
-                    {
-                        String temp = original.charAt(i) + "";
-                        temp = temp.toLowerCase();
-                        result = result + "_" + temp;
-                    }
-                }
-                System.out.println(result);
-            }
-            if (isCpp && !isJava) {
-                System.out.println("It's C++ identifier!");
-
-                String original = test;
-                String result = "";
-
-                for (int i = 0; i < original.length(); i++) {
-                    if (original.charAt(i) >= 'a' && original.charAt(i) <= 'z') {
-                        result = result + original.charAt(i);
-                    }
-                    else if(original.charAt(i) == '_' && i != original.length()-1)
-                    {
-                        String temp = original.charAt(i+1) + "";
-                        temp = temp.toUpperCase();
-                        result = result + temp;
-                        i++;
-                    }
-                }
-                System.out.println(result);
-            }
-            if (!isJava && !isCpp) {
-                System.out.println("Smth else!");
+        for (int i = 0; i < test.length(); i++) {
+            if (test.charAt(i) >= 'A' && test.charAt(i) <= 'Z') {
+                hasBigLetter = true;
+                break;
             }
         }
+
+        for (int i = 0; i < test.length(); i++) {
+            if (test.charAt(i) == '_') {
+                hasProcherk = true;
+                break;
+            }
+        }
+
+        System.out.println("First Big: " + firstLetterIsBig);
+        System.out.println("Has Big: " + hasBigLetter);
+        System.out.println("Has _: " + hasProcherk);
+
+        boolean isJava = false;
+        boolean isCpp = false;
+
+        if (firstLetterIsBig == false && hasBigLetter == true && hasProcherk == false) {
+            isJava = true;
+        } else if (firstLetterIsBig == false && hasBigLetter == false && hasProcherk == true) {
+            isCpp = true;
+        } else if (firstLetterIsBig == false && hasBigLetter == false && hasProcherk == false) {
+            isJava = true;
+            isCpp = true;
+        }
+
+        if (isJava && !isCpp) {
+            System.out.println("It's Java identifier!");
+
+            String original = test;
+            String result = "";
+            for (int i = 0; i < original.length(); i++) {
+                if (original.charAt(i) >= 'a' && original.charAt(i) <= 'z') {
+                    result = result + original.charAt(i);
+                } else {
+                    String temp = original.charAt(i) + "";
+                    temp = temp.toLowerCase();
+                    result = result + "_" + temp;
+                }
+            }
+            System.out.println(result);
+        }
+        if (isCpp && !isJava) {
+            System.out.println("It's C++ identifier!");
+
+            String original = test;
+            String result = "";
+
+            for (int i = 0; i < original.length(); i++) {
+                if (original.charAt(i) >= 'a' && original.charAt(i) <= 'z') {
+                    result = result + original.charAt(i);
+                } else if (original.charAt(i) == '_' && i != original.length() - 1) {
+                    String temp = original.charAt(i + 1) + "";
+                    temp = temp.toUpperCase();
+                    result = result + temp;
+                    i++;
+                }
+            }
+            System.out.println(result);
+        }
+        if (!isJava && !isCpp) {
+            System.out.println("Smth else!");
+        }
+    }
 
 /*
             11. Для проверки знаний учеников после летних каникул, учитель младших классов решил начинать каждый урок с того,
@@ -361,7 +365,7 @@ String corrent = frist + "x" + second;
             делать 11 после этого
             */
 
-    }
+}
 
 
 
