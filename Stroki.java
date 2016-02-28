@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  */
 public class Stroki {
     public static void main(String[] args) {
-        task5();
+        task3();
     }
 
 
@@ -98,18 +98,33 @@ public class Stroki {
         System.out.println("Других символов – " + (length - a - b - c - d));
     }
 
+    public static void task3() {
     /*
     3.	Подсчитать среднюю длину слова во введённом предложении.
+    */
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();// вводим строку
+        int call = 0;
+        int j = 0;
+        String[] tokens = str.split(" ");
+        for (int i = 1; i <= tokens.length; i++) {
+            call += tokens[i].length();
+            j = i;
+        }
+        int otvet = call / j;
+        System.out.println("Средняя длина слова во введённом предложении" + otvet);
+    }
 
-    4.	Определить, является ли строка палиндромом. Примеры палиндромов:
-    Аргентина манит негра.
-    Лёша на полке клопа нашёл.
-    Нажал кабан на баклажан.
-    Я так нежен, Катя.
-    Мокнет Оксана с котенком…
-    На вид енот – это не диван…
-    Юра, хватит! - А в харю?
-
+    /*
+4.	Определить, является ли строка палиндромом. Примеры палиндромов:
+Аргентина манит негра.
+Лёша на полке клопа нашёл.
+Нажал кабан на баклажан.
+Я так нежен, Катя.
+Мокнет Оксана с котенком…
+На вид енот – это не диван…
+Юра, хватит! - А в харю?
+}
 */
     public static void task5() {
     /*
