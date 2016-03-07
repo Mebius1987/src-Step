@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Shkurenko_7 {
     public static void main(String[] args) {
-        task21();
+        task16();
     }
 
 
@@ -174,19 +174,29 @@ public class Shkurenko_7 {
             }
         }
     }
-
+    public static void task16() {
     /*
 16.	Показать на экране лесенку. Количество ступенек (например, 5) указывает пользователь.
+*/
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Введите количество ступенек");
+        int count = sc.nextInt();
+        System.out.println(" * * *");
+        for (int i = 0; i < count; i++) {
+            for (int spaces = 0; spaces < (i + 1) * 2; spaces++) System.out.print("  ");
+            System.out.println(" *");
+            for (int spaces = 0; spaces < (i + 1) * 2; spaces++) System.out.print("  ");
+            for (int stars = 0; stars < 3; stars++) System.out.print(" *");
+
+            System.out.println("");
+        }
+
+    }
 
 
 
-
-
-
-
-
-
-
+/*
 
 17.	Пользователь указывает с клавиатуры нечётное число. Рисуется фигура с заданной стороной:
 
