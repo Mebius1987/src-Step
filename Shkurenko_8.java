@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task14();
+        task15();
     }
 
     public static void task1() {
@@ -393,8 +393,58 @@ public class Shkurenko_8 {
     /*
     15.	Даны 2 массива размерности M и N соответственно. Необходимо переписать в третий массив те элементы первого массива, которых нет во втором массиве,  без повторений.
     */
+        class Array {
+            int data[], size;
 
+            Array (int size) {
+                data = new int[size];
+                this.size = size;
+            }
+
+            void fillRandomInt (int rangeL, int rangeH) {
+                for (int i=0; i<size; i++)
+                    data[i] = (int)Math.round(Math.random()*(rangeH-rangeL)+rangeL);
+            }
+
+            void print () {
+                for (int x:data)
+                    System.out.printf("%4d", x);
+                System.out.println();
+            }
+        }
+        int M=14, N=10;
+
+        Array A = new Array (M);
+        A.fillRandomInt(0, 10);
+
+        Array B = new Array (N);
+        B.fillRandomInt(0, 10);
+
+        System.out.printf("\nМассив A из %d случайных чисел:\n",A.size);
+        A.print();
+        System.out.printf("\nМассив B из %d случайных чисел:\n",B.size);
+        B.print();
+
+        HashSet<Integer> common = new HashSet<Integer>();
+
+        for (int a:A.data) {
+            boolean repeat=false;
+            for (int b:B.data)
+                if (a==b) repeat=true;
+            if (!repeat)common.add(a);
+        }
+
+        Array C = new Array (common.size());
+
+        int i=0;
+        for (Integer val:common)
+            C.data[i++] = val;
+
+        System.out.printf("\nЭлементы первого массива, которых нет во втором массиве:\n");
+        C.print();
     }
+
+
 
     public static void task16() {
     /*
