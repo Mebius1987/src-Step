@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task15();
+        task17();
     }
 
     public static void task1() {
@@ -471,9 +471,56 @@ public class Shkurenko_8 {
             }
         }
     }
-
+    public static void task17() {
     /*
     17.	Создать массив из 20 случайных чисел в диапазоне от -10 до 20. Определить максимальное количество подряд идущих положительных элементов, не прерываемых ни нулями, ни отрицательными числами. Вывести найденный фрагмент.
+    */
+        class Array {
+            int data[], size;
+
+            Array (int size) {
+                data = new int[size];
+                this.size = size;
+            }
+
+            void fillRandomInt (int rangeL, int rangeH) {
+                for (int i=0; i<size; i++)
+                    data[i] = (int)Math.round(Math.random()*(rangeH-rangeL)+rangeL);
+            }
+
+            void print () {
+                for (int x:data)
+                    System.out.printf("%4d", x);
+                System.out.println();
+            }
+        }
+
+        Array A = new Array (20);
+        A.fillRandomInt(-10, 20);
+
+        System.out.printf("\nМассив A из %d случайных чисел:\n",A.size);
+        A.print();
+
+        int begin=0, end=0, count=0, newBegin=0;
+        boolean counting=false;
+
+        for (int i=0; i<A.size; i++) {
+            if (!counting && A.data[i]>0) {newBegin=i; counting=true;}
+            if (counting && (A.data[i]<=0)) {
+                counting=false;
+                if (i-newBegin>count) {begin=newBegin; end=i; count=end-begin;}
+            }
+        }
+        if (counting && A.size-newBegin>count) {begin=newBegin; end=A.size; count=end-begin;}
+
+        System.out.printf("\nМаксимальное количество подряд идущих положительных элементов = %d", count);
+        System.out.printf("\nНайденный фрагмент:");
+        for (int i=begin; i<end; i++)
+            System.out.printf("%3d",A.data[i]);
+    }
+
+
+    /*
     18.	Создать массив из 10 вещественных чисел. Преобразовать массив так, чтобы сначала шли все элементы с вещественной частью, а потом без нее.
     19.	Создать массив из 10 целых случайных чисел в диапазоне от 0 до 100. Найти элемент, максимально близкий к среднему арифметическому значений массива.
     20.	Осуществить циклический сдвиг массива на N элементов. Направление сдвига указывает пользователь (например, массив 0,1,2,3,4,5,6,7,8,9 при циклическом сдвиге вправо на 3 элемента примет вид 7,8,9,0,1,2,3,4,5,6).
