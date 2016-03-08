@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task18();
+        task19();
     }
 
     public static void task1() {
@@ -562,9 +562,52 @@ public class Shkurenko_8 {
         B.print();
     }
 
-
+    public static void task19(){
     /*
     19.	Создать массив из 10 целых случайных чисел в диапазоне от 0 до 100. Найти элемент, максимально близкий к среднему арифметическому значений массива.
+    */
+        class Array {
+            int data[], size;
+
+            Array (int size) {
+                data = new int[size];
+                this.size = size;
+            }
+
+            void fillRandomInt (int rangeL, int rangeH) {
+                for (int i=0; i<size; i++)
+                    data[i] = (int)Math.round(Math.random()*(rangeH-rangeL)+rangeL);
+            }
+
+            void print () {
+                for (int x:data)
+                    System.out.printf("%4d", x);
+                System.out.println();
+            }
+        }
+
+        Array A = new Array (10);
+        A.fillRandomInt(0, 100);
+
+        System.out.printf("\nМассив A из %d случайных чисел:\n",A.size);
+        A.print();
+
+        int sum=0;
+        for (int x:A.data)
+            sum+=x;
+
+        double ariphmet = (double)sum/A.size;
+        int nearAriphmet=A.data[0];
+
+        for (int x:A.data)
+            if (Math.abs(ariphmet-x)<Math.abs(ariphmet-nearAriphmet)) nearAriphmet=x;
+
+        System.out.printf("\nCреднее арифметическое значений массива = %s",ariphmet);
+        System.out.printf("\nЭлемент, максимально близкий к среднему арифметическому значений массива = %d",nearAriphmet);
+    }
+
+
+    /*
     20.	Осуществить циклический сдвиг массива на N элементов. Направление сдвига указывает пользователь (например, массив 0,1,2,3,4,5,6,7,8,9 при циклическом сдвиге вправо на 3 элемента примет вид 7,8,9,0,1,2,3,4,5,6).
     21.	Создать массив строк на 4000 элементов. Заполнить его римскими числами от 1 до 3999, показать на экране все элементы.
     22.	Ввести число в диапазоне от 0 до 1000000. Озвучить его словами. Например, при вводе числа 25 вывести на экране «двадцать пять».
