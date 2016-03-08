@@ -1,6 +1,7 @@
 package Step;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task24();
+        task14();
     }
 
     public static void task1() {
@@ -336,51 +337,57 @@ public class Shkurenko_8 {
     14.	Даны 2 массива размерности M и N соответственно. Необходимо переписать в третий массив общие элементы первых двух массивов, без повторений.
     */
 
-        Scanner sc = new Scanner(System.in);
-        int razmerM = sc.nextInt();
-        int masM[] = new int[razmerM];
-        for (int i = 0; i < masM.length; i++) {
-            masM[i] = (int) (Math.random() * 50);
-        }
-        System.out.println(Arrays.toString(masM));
-        int razmerN = sc.nextInt();
-        int masN[] = new int[razmerN];
-        for (int i = 0; i < masN.length; i++) {
-            masN[i] = (int) (Math.random() * 50);
-        }
-        System.out.println(Arrays.toString(masN));
-        int[] max;
-        int[] min;
-        if (razmerM > razmerN) {
-            max = masM;
-            min = masN;
-        } else {
-            max = masN;
-            min = masM;
-        }
-        int work[] = new int[max.length];
-        int coiunt = 0;
-        for (int i = 0; i < max.length; i++) {
-            boolean found = false; // сделал вид что забыл удалить ;)
-            for (int j = 0; j < min.length; j++) {
-                if (max[i] == min[j]) {
-                    work[coiunt] = max[i];
-                    coiunt++;
-                }
 
+        class Array {
+            int data[], size;
+
+            Array (int size) {
+                data = new int[size];
+                this.size = size;
             }
-            int finish[] = new int[coiunt];
 
+            void fillRandomInt (int rangeL, int rangeH) {
+                for (int i=0; i<size; i++)
+                    data[i] = (int)Math.round(Math.random()*(rangeH-rangeL)+rangeL);
+            }
 
-// тут создаем результирующий массив (размер которого будет равен количеству
-// найденных одинаковых элементов, да-да переменная coiunt тут не спроста ) и с помощью arraycopy переносим в него все найденный элементы.
-
+            void print () {
+                for (int x:data)
+                    System.out.printf("%4d", x);
+                System.out.println();
+            }
         }
-        System.out.println(Arrays.toString(work));
-        int masr[] = new int[coiunt];
 
-        //int mas[] = new int[coiunt];
+        int M=16, N=12;
+
+        Array A = new Array (M);
+        A.fillRandomInt(0, 10);
+
+        Array B = new Array (N);
+        B.fillRandomInt(0, 10);
+
+        System.out.printf("\nМассив A из %d случайных чисел:\n",A.size);
+        A.print();
+        System.out.printf("\nМассив B из %d случайных чисел:\n",B.size);
+        B.print();
+
+        HashSet<Integer> common = new HashSet<Integer>();
+
+        for (int a:A.data)
+            for (int b:B.data)
+                if (a==b) common.add(a);
+
+        Array C = new Array (common.size());
+
+        int i=0;
+        for (Integer val:common)
+            C.data[i++] = val;
+
+        System.out.printf("\nОбщие элементы первых двух массивов:\n");
+        C.print();
     }
+
+
 
     public static void task15() {
     /*
