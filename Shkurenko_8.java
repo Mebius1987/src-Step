@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task17();
+        task18();
     }
 
     public static void task1() {
@@ -519,9 +519,51 @@ public class Shkurenko_8 {
             System.out.printf("%3d",A.data[i]);
     }
 
-
+    public static void task18() {
     /*
     18.	Создать массив из 10 вещественных чисел. Преобразовать массив так, чтобы сначала шли все элементы с вещественной частью, а потом без нее.
+    */
+        class Array {
+            float data[];
+            int size;
+
+            Array (int size) {
+                data = new float[size];
+                this.size = size;
+            }
+
+            void fillRandomInt (float rangeL, float rangeH) {
+                for (int i=0; i<size; i++)
+                    data[i] = (float)(Math.round((Math.random()*(rangeH-rangeL)+rangeL)*10)/10.0);
+            }
+
+            void print () {
+                for (float x:data)
+                    System.out.printf("  %s", x);
+                System.out.println();
+            }
+        }
+
+        Array A = new Array (10);
+        A.fillRandomInt(0, 20);
+
+        System.out.printf("Массив из %d случайных вещественных чисел:\n", A.size);
+        A.print();
+
+        Array B = new Array (A.size);
+
+        int index=0;
+        for (float x:A.data)
+            if (x%1!=0) B.data[index++]=x;
+        for (float x:A.data)
+            if (x%1==0) B.data[index++]=(int)x;
+
+        System.out.printf("\nМассив после преобразования:\n");
+        B.print();
+    }
+
+
+    /*
     19.	Создать массив из 10 целых случайных чисел в диапазоне от 0 до 100. Найти элемент, максимально близкий к среднему арифметическому значений массива.
     20.	Осуществить циклический сдвиг массива на N элементов. Направление сдвига указывает пользователь (например, массив 0,1,2,3,4,5,6,7,8,9 при циклическом сдвиге вправо на 3 элемента примет вид 7,8,9,0,1,2,3,4,5,6).
     21.	Создать массив строк на 4000 элементов. Заполнить его римскими числами от 1 до 3999, показать на экране все элементы.
