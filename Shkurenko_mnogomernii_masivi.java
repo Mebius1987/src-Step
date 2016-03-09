@@ -1,12 +1,13 @@
 package Step;
 
 
+import javax.swing.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Shkurenko_mnogomernii_masivi {
     public static void main(String[] args) {
-        task12();
+        task13();
     }
 
     public static void task1() {
@@ -346,79 +347,119 @@ public class Shkurenko_mnogomernii_masivi {
             for (int yx : y) System.out.printf("%3d", yx);
         }
     }
+
     public static void task12() {
 /*
             12.	Заполнить массив M x N следующим образом:
 */
 
-            class FillArrayByReflaction {
-                int X, Y, x=0, y=0, value=0, missing=0;
-                boolean directionYdown=true, directionXright=true;
-                boolean enableTeleport=false;
-                int array[][];
+        class FillArrayByReflaction {
+            int X, Y, x = 0, y = 0, value = 0, missing = 0;
+            boolean directionYdown = true, directionXright = true;
+            boolean enableTeleport = false;
+            int array[][];
 
-                FillArrayByReflaction (int array[][]) {
-                    this.array = array;
-                    this.Y = array.length;
-                    this.X = array[0].length;
-                }
-
-                boolean doIt() {
-                    array[y++][x++] = ++value;
-                    while (value<array.length*array[0].length) {
-                        nextStep();
-                        if (missing==array.length*array[0].length) return false;
-                    }
-                    return true;
-                }
-
-                void nextStep() {
-
-                    if (enableTeleport) teleport();
-
-                    boolean border = y==0 || x==0 || y==Y-1 || x==X-1;
-                    boolean corner = y==0 && x==0 || y==Y-1 && x==X-1 || y==0 && x==X-1 || x==0 && y==Y-1;
-
-                    if (corner) enableTeleport=!enableTeleport;
-                    else if (border) reflact();
-
-                    if (array[y][x]==0) { array[y][x] = ++value; missing=0;}
-                    else missing++;
-
-                    y = (directionYdown)? ++y: --y;
-                    x = (directionXright)? ++x: --x;
-                }
-
-                void reflact () {
-                    directionYdown = (y==0)? true: (y==Y-1)? false: directionYdown;
-                    directionXright = (x==0)? true: (x==X-1)? false: directionXright;
-                }
-
-                void teleport () {
-                    x = (x==-1)? X-1: 0;
-                    y = (y==-1)? Y-1: 0;
-                }
-
+            FillArrayByReflaction(int array[][]) {
+                this.array = array;
+                this.Y = array.length;
+                this.X = array[0].length;
             }
 
-            int Y=7, X=8;
-            int array [][] = new int [Y][X];
-
-            FillArrayByReflaction fillArray = new FillArrayByReflaction(array);
-
-            if (fillArray.doIt()) System.out.printf("Массив успешно заполнен:\n");
-            else System.out.printf("Массив размерности %dx%d невозможно заполнить полностью:\n",Y,X);
-
-            for (int y[]:array) {
-                System.out.print("\n");
-                for (int yx:y) System.out.printf("%4d",yx);
+            boolean doIt() {
+                array[y++][x++] = ++value;
+                while (value < array.length * array[0].length) {
+                    nextStep();
+                    if (missing == array.length * array[0].length) return false;
+                }
+                return true;
             }
+
+            void nextStep() {
+
+                if (enableTeleport) teleport();
+
+                boolean border = y == 0 || x == 0 || y == Y - 1 || x == X - 1;
+                boolean corner = y == 0 && x == 0 || y == Y - 1 && x == X - 1 || y == 0 && x == X - 1 || x == 0 && y == Y - 1;
+
+                if (corner) enableTeleport = !enableTeleport;
+                else if (border) reflact();
+
+                if (array[y][x] == 0) {
+                    array[y][x] = ++value;
+                    missing = 0;
+                } else missing++;
+
+                y = (directionYdown) ? ++y : --y;
+                x = (directionXright) ? ++x : --x;
+            }
+
+            void reflact() {
+                directionYdown = (y == 0) ? true : (y == Y - 1) ? false : directionYdown;
+                directionXright = (x == 0) ? true : (x == X - 1) ? false : directionXright;
+            }
+
+            void teleport() {
+                x = (x == -1) ? X - 1 : 0;
+                y = (y == -1) ? Y - 1 : 0;
+            }
+
         }
+
+        int Y = 7, X = 8;
+        int array[][] = new int[Y][X];
+
+        FillArrayByReflaction fillArray = new FillArrayByReflaction(array);
+
+        if (fillArray.doIt()) System.out.printf("Массив успешно заполнен:\n");
+        else System.out.printf("Массив размерности %dx%d невозможно заполнить полностью:\n", Y, X);
+
+        for (int y[] : array) {
+            System.out.print("\n");
+            for (int yx : y) System.out.printf("%4d", yx);
+        }
+    }
+
+    public static void task13(){
 /*
             13.	Заполнить трёхмерный массив N x N x N нулями. В получившийся куб вписать шар,
             состоящий из единиц. После чего, разрезать куб на N слоёв, и показать каждый слой в виде двумерного массива N x N на экране консоли.
+            */
+
+        int sizeOfCube;
+        boolean error;
+        int cube [][][];
+        String answer="0";
+
+        do
+            try {
+                answer = JOptionPane.showInputDialog("Введите размер куба (нечетное число)");
+                if (Integer.parseInt(answer)%2==0) throw new Exception();
+                error = false;
+            }
+            catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Размер введен неверно. Попробуйте еще раз.");
+                error = true;
+            }
+        while (error);
+
+        sizeOfCube = Integer.parseInt(answer);
+        cube = new int [sizeOfCube][sizeOfCube][sizeOfCube];
+        JOptionPane.showMessageDialog(null, "Результат смотри в консоли");
+
+        for (int x=0; x<sizeOfCube; System.out.printf("\n\n"), x++)
+            for (int y=0; y<sizeOfCube; System.out.printf("\n"), y++)
+                for (int z=0; z<sizeOfCube; System.out.printf("%2d",cube[x][y][z]), z++)
+                    if ( Math.pow(x-sizeOfCube/2,2) + Math.pow(y-sizeOfCube/2,2)
+                            + Math.pow(z-sizeOfCube/2,2) < Math.pow(sizeOfCube/2+0.1,2) )
+                        cube[x][y][z]++;
+    }
+
+    public static void task14(){
     /*
     14.	Реализовать преобразование двумерного массива в одномерный, и наоборот.
+    */
+
+    }
     /*
     15.	Создать массив размерностью M x N, заполненный случайными числами. Вывести на экран  строку, для которой среднее арифметическое элементов максимально отличается от среднего арифметического значения для всех элементов массива.
             /*
