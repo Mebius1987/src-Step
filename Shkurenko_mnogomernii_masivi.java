@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Shkurenko_mnogomernii_masivi {
     public static void main(String[] args) {
-        task2();
+        task6();
     }
 
     public static void task1() {
@@ -159,6 +159,25 @@ public class Shkurenko_mnogomernii_masivi {
     /*
     6.	В двумерном массиве размерности M x N поменять местами чётные строки с нечётными.
 */
+        int N = 5, M = 7;
+        int array [][] = new int [N][M];
+        int temp;
+
+        System.out.println("До:");
+        for (int y=0; y<array.length; System.out.println(), y++)
+            for (int x=0; x<array[y].length; System.out.printf("%4d",array[y][x]), x++)
+                array[y][x] = (y+1)*10+x+1;
+
+        System.out.println("После:");
+        for (int y=0; y+1<N; y+=2)
+            for (int x=0; x<M; x++) {
+                temp=array[y][x]; array[y][x]=array[y+1][x]; array[y+1][x]=temp;
+            }
+
+        for (int y[]:array) {
+            for (int yx:y) System.out.printf("%4d",yx);
+            System.out.println();
+        }
 
 
     }
