@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Shkurenko_mnogomernii_masivi {
     public static void main(String[] args) {
-        task4();
+        task2();
     }
 
     public static void task1() {
@@ -37,13 +37,30 @@ public class Shkurenko_mnogomernii_masivi {
         }
         System.out.println("Сумма = " + sum + " среднее арифметическое = " + (sum / (m * n)) + " минимальный элемент = " + min + " максимальный элемент = " + max);
     }
-
+    public static void task2() {
     /*
         2.	Дан двумерный массив размерностью M х N, заполненный случайными числами из диапазона от 0 до 20.
         Определить сумму элементов, расположенных на главной диагонали,
         а также сумму элементов, расположенных на побочной диагонали.
-
         */
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+        int array [][] = new int [m][n];
+        int sum1=0, sum2=0, rangeL=0, rangeH=20;
+
+        for (int y=0; y<array.length; System.out.println(), y++)
+            for (int x=0; x<array[y].length; System.out.printf("%4d",array[y][x]), x++) {
+                array[y][x] = (int)Math.round(Math.random()*(rangeH-rangeL)+rangeL);
+                if (x==y) sum1+=array[y][x];
+                if (m-1-x==y) sum2+=array[y][x];
+            }
+
+        System.out.print("\n Сумма элементов, расположенных на главной диагонали = "+sum1);
+        System.out.print("\n Сумма элементов, расположенных на побочной диагонали = "+sum2);
+
+
+    }
     public static void task3() {
              /*
         3.	Дан двумерный массив размерностью M х N, заполненный случайными числами из диапазона от -10 до 10.
