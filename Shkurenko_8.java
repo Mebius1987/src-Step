@@ -1,5 +1,6 @@
 package Step;
 
+import javax.swing.*;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
@@ -9,7 +10,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task19();
+        task21();
     }
 
     public static void task1() {
@@ -606,11 +607,78 @@ public class Shkurenko_8 {
         System.out.printf("\nЭлемент, максимально близкий к среднему арифметическому значений массива = %d",nearAriphmet);
     }
 
-
+    public static void task20(){
     /*
     20.	Осуществить циклический сдвиг массива на N элементов. Направление сдвига указывает пользователь (например, массив 0,1,2,3,4,5,6,7,8,9 при циклическом сдвиге вправо на 3 элемента примет вид 7,8,9,0,1,2,3,4,5,6).
+    */
+        class Array {
+            int data[], size;
+
+            Array (int size) {
+                data = new int[size];
+                this.size = size;
+            }
+
+            void fillRandomInt (int rangeL, int rangeH) {
+                for (int i=0; i<size; i++)
+                    data[i] = (int)Math.round(Math.random()*(rangeH-rangeL)+rangeL);
+            }
+
+            void print () {
+                for (int x:data)
+                    System.out.printf("%4d", x);
+                System.out.println();
+            }
+
+            Array cicleMove (int dirrection) {
+                Array result = new Array(size);
+                for (int i=0; i<size; i++)
+                    result.data[(size+i+dirrection)%size] = data[i];
+                return result;
+            }
+        }
+
+
+        Array A = new Array (9);
+        for (int i=0; i<A.size;)
+            A.data[i]=++i;
+
+        System.out.printf("\nМассив из %d случайных чисел:\n",A.size);
+        A.print();
+
+        int moveDirrection=-3;
+        Array B = new Array (A.size);
+        B = A.cicleMove(moveDirrection);
+
+        System.out.printf("После циклического сдвига %s на %d элемента:\n",
+                (moveDirrection>0)?"вправо":"влево", Math.abs(moveDirrection));
+        B.print();
+    }
+    public static void task21(){
+    /*
     21.	Создать массив строк на 4000 элементов. Заполнить его римскими числами от 1 до 3999, показать на экране все элементы.
+    */
+        String romABC[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int    rom123[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+
+        int value = Integer.parseInt(JOptionPane.showInputDialog("Введите арабское число"));
+        int x = value;
+        String res = "";
+
+        for (int i=0; i<rom123.length; i++)
+            while (x >= rom123[i]) {
+                x -= rom123[i];
+                res += romABC[i];
+            }
+
+        JOptionPane.showMessageDialog(null, value+" = "+res);
+    }
+    public static void task22() {
+    /*
     22.	Ввести число в диапазоне от 0 до 1000000. Озвучить его словами. Например, при вводе числа 25 вывести на экране «двадцать пять».
+    */
+    }
+    /*
     23.	Дана последовательность: 1, 11, 21, 1211, 111221, 312211, 13112221, … Ввести число N. Показать N-ный по счёту элемент последовательности.
    */
     public static void task24() {
