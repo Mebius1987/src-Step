@@ -14,26 +14,7 @@ public class metodi {
 
 
 
-    public static void sumBetween(int first, int second) {
-        /*
-        5.	Написать статический метод sumBetween, который получает в качестве параметров 2 целых числа и возвращает сумму чисел из диапазона между ними.
-*/
-        int sum = 0;
-        for (int i = first + 1; i < second; i++) {
-            sum += i;
-        }
-        System.out.println(sum);
-    }
-    public static void arrayAvg(int ar[]) {
-        /*
-        6.	Написать статический метод arrayAvg, определяющий среднее арифметическое элементов передаваемого ему массива.
-*/
-        int s = 0;
-        for (int current : ar) {
-            s += current;
-        }
-        System.out.println(s/ar.length);
-    }
+
     public static void metod1(int ar[]) {
         /*
         7.	Написать 4 метода, которые позволят: вернуть ссылку на созданный одномерный массив типа int указанного размера,
@@ -45,9 +26,6 @@ public class metodi {
 
 
     public static void main(String[] args) {
-
-
-        //sumBetween(12, 14);
         //arrayAvg(new int[]{1, 2, 3, 4, 5});
     }
 }
