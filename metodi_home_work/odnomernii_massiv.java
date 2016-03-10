@@ -4,23 +4,26 @@ package Step.metodi_home_work;
  * Created by Mebius on 10.03.2016.
  */
 public class odnomernii_massiv {
-    public static void metod1(int ar[]) {
+    public static int zapArr(int ar[], int razmer) {
             /*
         7.	Написать 4 метода, которые позволят: вернуть ссылку на созданный одномерный массив типа int указанного размера,
         заполнить массив случайными числами, показать массив на экран консоли, отсортировать массив, вставить целое
          число в указанный массив типа int по указанному индексу.
 */
-        public static int zapolnim (int  first){
+
 
 
         }
-    }
+
 
 
     public static void main(String[] args) {
+
         int a = 10;// razmer massiva
+
         int mas[] = new int[a];
-        zapolnim(int mas[] = new int[a]);
+
+        zapArr(mas,a);
     }
 }
 /*
