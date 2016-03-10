@@ -11,24 +11,6 @@ public class metodi {
     //task1();
     //}
     //public static void task1() {
-
-    public static void myRectangle(int Height, int Width, char ramka, char a) {
-/*
-        2.	Написать статический метод myRectangle, который выводит на экран консоли прямоугольник.
-        Метод принимает 4 параметра: ширина, высота, символ рамки, символ заливки.
-*/
-
-        for (int y = 0; y < Height; y++) {
-            for (int x = 0; x < Width; x++) {
-                if (y == Height + 1) {
-                    System.out.print(ramka);
-                }
-                System.out.println(a);
-            }
-        }
-    }
-
-
     public static void cube(int chislo) {
         /*
         3.	Написать статический метод cube, который возвращает куб переданного числа.
@@ -88,9 +70,6 @@ public class metodi {
 
 
     public static void main(String[] args) {
-
-
-        //myRectangle(5, 5, '@', '*');
         //cube(5);
         //isSimple(22);
         //sumBetween(12, 14);
