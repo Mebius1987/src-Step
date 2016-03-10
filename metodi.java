@@ -11,13 +11,6 @@ public class metodi {
     //task1();
     //}
     //public static void task1() {
-    public static void cube(int chislo) {
-        /*
-        3.	Написать статический метод cube, который возвращает куб переданного числа.
-*/
-        System.out.println(Math.pow(chislo, 3));
-
-    }
 
     public static void isSimple(int number) {
         /*
