@@ -2,12 +2,14 @@ package Step;
 
 
 import java.util.Map;
+import java.util.Scanner;
 
 public class metodi {
-    public static void main(String[] args) {
-        task1();
-    }
-    public static void task1() {
+
+    //public static void main(String[] args) {
+    //task1();
+    //}
+    //public static void task1() {
 
         /*
     }
@@ -16,25 +18,28 @@ public class metodi {
         и при этом на экране консоли нарисуется горизонтальная линия, состоящая из 20 «собачек». Если передать в последнем параметре false – линия станет вертикальной.
 */
 
-        public static void myLine(int length, char symbol, boolean c) {
-            if(c){
+    public static void myLine(int length, char symbol, boolean c) {
+        if (c) {
             for (int i = 0; i < length; i++) {
                 System.out.print(symbol);
             }
             System.out.println();
         } else {
-                for (int i = 0; i < length; i++) {
-                    System.out.println(symbol);
-                }
+            for (int i = 0; i < length; i++) {
+                System.out.println(symbol);
             }
+        }
+    }
+
 
     public static void main(String[] args) {
 
-        myLine(20, '@', true);
+        myLine(20, '@', false);
 
 
     }
 }
+
 
 /*
         2.	Написать статический метод myRectangle, который выводит на экран консоли прямоугольник. Метод принимает 4 параметра: ширина, высота, символ рамки, символ заливки.
@@ -69,4 +74,3 @@ public class metodi {
 /*
         12.	Оптимизировать коды решений по одиннадцатому блоку (введение в Java FX). В новой версии проекта «Лабиринт» должно получиться не менее 20 пользовательских методов.
 */
-    }
