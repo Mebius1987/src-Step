@@ -15,7 +15,7 @@ public class lini9 {
         for (int i = 0; i < length; i++) {
             if (c) {
                 System.out.print(symbol);
-            }
+            } else
             System.out.println(symbol);
         }
     }
