@@ -20,17 +20,15 @@ public class metodi {
         и при этом на экране консоли нарисуется горизонтальная линия, состоящая из 20 «собачек».
         Если передать в последнем параметре false – линия станет вертикальной.
 */
-        if (c) {
+
             for (int i = 0; i < length; i++) {
-                System.out.print(symbol);
-            }
-            System.out.println();
-        } else {
-            for (int i = 0; i < length; i++) {
-                System.out.println(symbol);
+                if (c) {
+                    System.out.print(symbol);
+                }
+                    System.out.println(symbol);
             }
         }
-    }
+
 
     public static void myRectangle(int Height, int Width, char ramka, char a) {
 /*
@@ -103,12 +101,13 @@ public class metodi {
         заполнить массив случайными числами, показать массив на экран консоли, отсортировать массив, вставить целое
          число в указанный массив типа int по указанному индексу.
 */
+
     }
 
 
     public static void main(String[] args) {
 
-        //myLine(20, '@', false);
+        myLine(20, '@', false);
         //myRectangle(5, 5, '@', '*');
         //cube(5);
         //isSimple(22);
