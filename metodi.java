@@ -12,25 +12,7 @@ public class metodi {
     //}
     //public static void task1() {
 
-    public static void isSimple(int number) {
-        /*
-        4.	Написать статический булевский метод isSimple, который проверяет, является ли переданное ему число простым.
-        Число называется простым, если оно делится без остатка только на себя и на единицу.
-*/
 
-        int start = 2;
-        boolean isSimple = true; //сколько раз получился 0
-        while (start < number) {
-
-            if (number % start == 0) {
-                isSimple = false;
-                break;
-
-            }
-            start++;
-        }
-        System.out.println(isSimple);
-    }
 
     public static void sumBetween(int first, int second) {
         /*
@@ -63,8 +45,8 @@ public class metodi {
 
 
     public static void main(String[] args) {
-        //cube(5);
-        //isSimple(22);
+
+
         //sumBetween(12, 14);
         //arrayAvg(new int[]{1, 2, 3, 4, 5});
     }

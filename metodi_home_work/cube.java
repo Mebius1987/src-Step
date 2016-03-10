@@ -9,7 +9,6 @@ public class cube {
         3.	Написать статический метод cube, который возвращает куб переданного числа.
 */
         return Math.pow(chislo, 3);
-
     }
 
     public static void main(String[] args) {
