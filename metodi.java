@@ -1,6 +1,7 @@
 package Step;
 
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -16,7 +17,8 @@ public class metodi {
               /*
         1.	Написать статический метод myLine, который можно будет вызвать так:
         myLine(20, '@', true);
-        и при этом на экране консоли нарисуется горизонтальная линия, состоящая из 20 «собачек». Если передать в последнем параметре false – линия станет вертикальной.
+        и при этом на экране консоли нарисуется горизонтальная линия, состоящая из 20 «собачек».
+        Если передать в последнем параметре false – линия станет вертикальной.
 */
         if (c) {
             for (int i = 0; i < length; i++) {
@@ -30,13 +32,22 @@ public class metodi {
         }
     }
 
-    public static void myRectangle(int Height, int Width, char symbol, char a) {
+    public static void myRectangle(int Height, int Width, char ramka, char a) {
 /*
         2.	Написать статический метод myRectangle, который выводит на экран консоли прямоугольник.
         Метод принимает 4 параметра: ширина, высота, символ рамки, символ заливки.
 */
 
+        for (int y = 0; y < Height; y++) {
+            for (int x = 0; x < Width; x++) {
+                if (y == Height + 1) {
+                    System.out.print(ramka);
+                }
+                System.out.println(a);
+            }
+        }
     }
+
 
     public static void cube(int chislo) {
         /*
@@ -46,23 +57,47 @@ public class metodi {
 
     }
 
+    public static void isSimple(int number) {
+        /*
+        4.	Написать статический булевский метод isSimple, который проверяет, является ли переданное ему число простым.
+        Число называется простым, если оно делится без остатка только на себя и на единицу.
+*/
+
+        int start = 2;
+        boolean isSimple = true; //сколько раз получился 0
+        while (start < number) {
+
+            if (number % start == 0) {
+                isSimple = false;
+                break;
+
+            }
+            start++;
+        }
+        System.out.println(isSimple);
+    }
+
+    public static void sumBetween(int first, int second) {
+        /*
+        5.	Написать статический метод sumBetween, который получает в качестве параметров 2 целых числа и возвращает сумму чисел из диапазона между ними.
+*/
+        int sum = 0;
+        for (int i = first + 1; i < second; i++) {
+            sum += i;
+        }
+        System.out.println(sum);
+    }
+
     public static void main(String[] args) {
 
         //myLine(20, '@', false);
-        //myRectangle(10, 10, '@', '*');
+        //myRectangle(5, 5, '@', '*');
         //cube(5);
+        //isSimple(22);
+        sumBetween(12, 14);
     }
 }
 
-
-
-
-
-/*
-        4.	Написать статический булевский метод isSimple, который проверяет, является ли переданное ему число простым. Число называется простым, если оно делится без остатка только на себя и на единицу.
-
-/*
-        5.	Написать статический метод sumBetween, который получает в качестве параметров 2 целых числа и возвращает сумму чисел из диапазона между ними.
 
 /*
         6.	Написать статический метод arrayAvg, определяющий среднее арифметическое элементов передаваемого ему массива.

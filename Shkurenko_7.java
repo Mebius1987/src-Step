@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Shkurenko_7 {
     public static void main(String[] args) {
-        task19();
+        task5();
     }
 
 
