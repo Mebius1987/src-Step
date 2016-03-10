@@ -6,22 +6,12 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class metodi {
-
-    //public static void main(String[] args) {
-    //task1();
-    //}
-    //public static void task1() {
-
-
-
-
     public static void metod1(int ar[]) {
         /*
         7.	Написать 4 метода, которые позволят: вернуть ссылку на созданный одномерный массив типа int указанного размера,
         заполнить массив случайными числами, показать массив на экран консоли, отсортировать массив, вставить целое
          число в указанный массив типа int по указанному индексу.
 */
-
     }
 
 
