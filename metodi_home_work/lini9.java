@@ -11,16 +11,15 @@ public class lini9 {
         и при этом на экране консоли нарисуется горизонтальная линия, состоящая из 20 «собачек».
         Если передать в последнем параметре false – линия станет вертикальной.
 */
-
         for (int i = 0; i < length; i++) {
+            System.out.print(symbol);
             if (c) {
-                System.out.print(symbol);
-            } else
-            System.out.println(symbol);
+                System.out.println();
+            }
         }
     }
     public static void main(String[] args) {
 
-        myLine(20, '@', false);
+        myLine(20, '@', true);
     }
 }
