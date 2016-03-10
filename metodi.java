@@ -12,24 +12,6 @@ public class metodi {
     //}
     //public static void task1() {
 
-
-    public static void myLine(int length, char symbol, boolean c) {
-              /*
-        1.	Написать статический метод myLine, который можно будет вызвать так:
-        myLine(20, '@', true);
-        и при этом на экране консоли нарисуется горизонтальная линия, состоящая из 20 «собачек».
-        Если передать в последнем параметре false – линия станет вертикальной.
-*/
-
-            for (int i = 0; i < length; i++) {
-                if (c) {
-                    System.out.print(symbol);
-                }
-                    System.out.println(symbol);
-            }
-        }
-
-
     public static void myRectangle(int Height, int Width, char ramka, char a) {
 /*
         2.	Написать статический метод myRectangle, который выводит на экран консоли прямоугольник.
@@ -107,7 +89,7 @@ public class metodi {
 
     public static void main(String[] args) {
 
-        myLine(20, '@', false);
+
         //myRectangle(5, 5, '@', '*');
         //cube(5);
         //isSimple(22);
