@@ -1,4 +1,4 @@
-package Step.metodi_home_work;
+package Step.home_work_metodi;
 
 /**
  * Created by Mebius on 10.03.2016.

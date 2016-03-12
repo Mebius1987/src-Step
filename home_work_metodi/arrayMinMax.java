@@ -1,4 +1,4 @@
-package Step.metodi_home_work;
+package Step.home_work_metodi;
 
 import java.util.Arrays;
 
