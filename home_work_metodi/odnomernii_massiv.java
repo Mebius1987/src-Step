@@ -21,6 +21,37 @@ public class odnomernii_massiv {
             System.out.println(i + "  " + ar[i] + ", ");
         }
     }
+    static void quickSort(int ar[], int start, int end) {
+
+        int L = start, R = end;
+        int M = ar[(start + end) / 2];
+
+        do {
+
+            while (ar[L] < M) {
+                L++;
+            }
+            while (ar[R] > M) {
+                R--;
+            }
+
+            if (L <= R) {
+                int temp = ar[L];
+                ar[L] = ar[R];
+                ar[R] = temp;
+                L++;
+                R--;
+            }
+
+        } while (L <= R);
+
+        if (start < R) {
+            quickSort(ar, start, R);
+        }
+        if (L < end) {
+            quickSort(ar, L, end);
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -28,24 +59,6 @@ public class odnomernii_massiv {
         int mas[] = new int[a];
         zapArr(mas,a);
         sysArr(mas);
+        quickSort(mas, 0, mas.length - 1);
     }
 }
-/*
-    int a = 10;//dlina massiva
-    int mas[] = new int[a];
-    int kol = 0;
-    int sum = 0;
-    int arf = 0;
-for (int i = 0; i < mas.length; i++) {
-        mas[i] = (int) (Math.random() * 40 - 20);
-        //System.out.print(mas[i] + " ");
-        System.out.println(i + "  " + mas[i] + ", ");
-        if (mas[i] > 0) {
-        kol++;
-        sum += mas[i];
-        }
-        arf = sum / mas.length;
-        }
-        System.out.println("Положительных элеметов масива =" + kol + "\n Сумма =" + sum + "\n  Среднее арифметическое положительных элементов массива =" + arf);
-        }
-        */
