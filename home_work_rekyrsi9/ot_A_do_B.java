@@ -14,17 +14,20 @@ public class ot_A_do_B {
             */
 
     public static int N(int n, int b) {
-        if (n > b) {
+        if (n < b) {
             if (n == b + 1)
                 return 1;//условие выхода из рекурсии
             System.out.println(n);
             return N(n + 1, b);// условие входа
+        } else if (n > b) {
+            if (n == b)
+                return 1;//условие выхода из рекурсии
+            System.out.println(n);
+            return N(n -1, b);// условие входа
         }
-        if (b == n )
-            return 1;//условие выхода из рекурсии
-        System.out.println(b);
-        return N(b - 1, n);// условие входа
+        return N(n-1, b);// условие входа
     }
+
 
     public static void main(String[] args) {
 
