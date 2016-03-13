@@ -11,13 +11,14 @@ public class natyral_1 {
 Вывод: 1 2 3 4 5
 
     */
-
+    public static int count =0;
     public static int N(int n) {
-        if (n == 0 )
-            return 1;//условие выхода из рекурсии
-        System.out.println(n);
-        return N(n - 1) ;// условие входа
+        count++;
+        if (n < count)
+            return n;//условие выхода из рекурсии
 
+        System.out.println(count);
+        return N(n);// условие входа
     }
 
     public static void main(String[] args) {
