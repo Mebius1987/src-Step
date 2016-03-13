@@ -20,12 +20,13 @@ public class ot_A_do_B {
             System.out.println(n);
             return N(n + 1, b);// условие входа
         } else if (n > b) {
+
             if (n == b)
                 return 1;//условие выхода из рекурсии
             System.out.println(n);
             return N(n -1, b);// условие входа
         }
-        return N(n-1, b);// условие входа
+        return N(n, b);// условие входа
     }
 
 
