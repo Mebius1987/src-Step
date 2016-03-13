@@ -4,13 +4,13 @@ package Step.para_20160311_rekyrsi9;
  * Created by Mebius on 11.03.2016.
  */
 public class Horse {
-    static int size = 5;
+    static int size = 8;
     static int[][] ar = new int[size][size];
 
     static int shiftX[] = {1, 2, 2, 1, -1, -2, -2, -1};
     static int shiftY[] = {-2, -1, 1, 2, 2, 1, -1, -2};
 
-    static int timeout = 5000; // ms
+    static int timeout = 1; // ms
 
     static boolean pony(int x, int y, int step) throws InterruptedException {
         ar[y][x] = step;
