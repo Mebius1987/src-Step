@@ -13,20 +13,21 @@ public class PrintAtoB_2 {
 
             */
 
-    public static void printAtoB(int a, int b) {
+    public static int printAtoB(int a, int b) {
         if (a < b) {
             System.out.println(a);
-            printAtoB(a + 1, b);
+            return 1 + printAtoB(a + 1, b);
         } else if (a > b) {
             System.out.println(a);
-            printAtoB(a - 1, b);
+            return 1 + printAtoB(a - 1, b);
         } else {
             System.out.println(a);
-            return;
+            return 1;
         }
     }
 
     public static void main(String[] args) {
-        printAtoB(5, 11);
+
+        System.out.println("Количество входов" + printAtoB(5, 11));
     }
 }
