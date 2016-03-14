@@ -3,7 +3,7 @@ package Step.home_work_rekyrsi9;
 /**
  * Created by Mebius on 13.03.2016.
  */
-public class PrintAtoB {
+public class PrintAtoB_2 {
     /*
   2. От A до B.
 Даны два целых числа A и В. Выведите все числа от A до B включительно, в порядке возрастания, если A < B, или в порядке убывания в противном случае.
