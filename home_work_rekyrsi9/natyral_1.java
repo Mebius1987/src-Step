@@ -3,7 +3,7 @@ package Step.home_work_rekyrsi9;
 /**
  * Created by Mebius on 13.03.2016.
  */
-public class natyral_1 {
+public class Natyral_1 {
     /*
     1. От 1 до n.
 Дано натуральное число n. Выведите все числа от 1 до n.
