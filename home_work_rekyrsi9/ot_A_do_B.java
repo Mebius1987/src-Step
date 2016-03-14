@@ -13,14 +13,15 @@ public class ot_A_do_B {
 
             */
 
-    public static int N(int n, int b) {
-        if (n < b + 1)
+    public static int (int n, int b) {
+
+        if (n < b)
             return 1;//условие выхода из рекурсии
         System.out.println(n);
-        return N(n + 1, b);// условие входа
+        return N(n - 1, b);// условие входа
     }
 
     public static void main(String[] args) {
-        N(1, 15);
+        N(5, 1);
     }
 }
