@@ -28,6 +28,6 @@ public class PrintAtoB_2 {
 
     public static void main(String[] args) {
 
-        System.out.println("Количество входов" + printAtoB(5, 11));
+        System.out.println("Количество входов " + printAtoB(5, 11));
     }
 }

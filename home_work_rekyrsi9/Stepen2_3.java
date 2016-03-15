@@ -11,17 +11,19 @@ package Step.home_work_rekyrsi9;
 Вывод: NO YES
  */
 public class Stepen2_3 {
-    public static void stepen(int n, int s) {
-
-        if (n != 2 && s != 2 ) {
-             stepen(n/2, s/2);
-        }else
-        System.out.println("NO");
+    public static void stepen(float n) {
+        if (n > 1) {
+            stepen(n / 2);
+        } else if (n == 1) {
+            System.out.println("YES");
+        } else if (n != 1) {
+            System.out.println("NO");
+        }
     }
 
     public static void main(String[] args) {
 
-        stepen(9, 9);
+        stepen(8);
     }
 
 }
