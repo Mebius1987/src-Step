@@ -14,17 +14,16 @@ public class PrintAtoB_2 {
             */
 
     public static void printAtoB(int a, int b) {
+        System.out.println(a);
         if (a < b) {
-            System.out.println(a);
-              printAtoB(a + 1, b);
+            printAtoB(a + 1, b);
         } else if (a > b) {
-            System.out.println(a);
-              printAtoB(a - 1, b);
+            printAtoB(a - 1, b);
         }
     }
 
     public static void main(String[] args) {
 
-         printAtoB(11, 5);
+        printAtoB(5, 11);
     }
 }
