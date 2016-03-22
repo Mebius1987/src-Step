@@ -1,4 +1,4 @@
-package Step;
+package Step.while_part2;
 
 import javax.swing.*;
 

@@ -1,4 +1,7 @@
-package Step;
+package Step.while_part2;
+
+import Step.while_part2.Line;
+import Step.while_part2.Point;
 
 import java.util.Scanner;
 
