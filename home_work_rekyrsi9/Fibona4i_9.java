@@ -27,7 +27,7 @@ public class Fibona4i_9 {
 
     public static void main(String[] args) {
 
-        System.out.println(F(41));
+        System.out.println(F(1000));
     }
 
 }
