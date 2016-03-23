@@ -143,9 +143,14 @@ public class Shkurenko_8_1 {
 */
         short temp = (short) (Math.random() * 32767);
         short temp2 = (short) (Math.random() * 32767);
-        System.out.println(temp);
-        System.out.println(temp2);
+        System.out.println("temp - " + temp);
+        System.out.println("temp2 - " + temp2);
         int a = 0;
+        a = a | temp;
+        a = (a << 16) | temp2;
+        System.out.println("Во временной переменной - " + a);
+        System.out.println("temp - " + (short) (a >> 16));
+        System.out.println("temp2 - " + (short) a);
 
     }
 

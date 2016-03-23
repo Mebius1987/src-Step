@@ -10,7 +10,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task21();
+        task15();
     }
 
     public static void task1() {
