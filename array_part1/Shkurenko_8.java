@@ -10,7 +10,7 @@ import java.util.Scanner;
  */
 public class Shkurenko_8 {
     public static void main(String[] args) {
-        task15();
+        task23();
     }
 
     public static void task1() {
@@ -695,8 +695,39 @@ public class Shkurenko_8 {
     /*
     23.	Дана последовательность: 1, 11, 21, 1211, 111221, 312211, 13112221, … Ввести число N. Показать N-ный по счёту элемент последовательности.
    */
-
+        int mas[]= new int[100];   // главный массив
+        int bas[]= new int[100];   // массив в который  будут записываться результаты
+        mas[0] = 1;                // начальный элемент
+        int b = 1;                 // количество повторяемых цифр
+        for(int j= 0; j < 10; j++){  // цикл для получения опредиленного количества блоков в данном случае 10
+            for(int i=0; i < mas.length ; i++){ // обработка главного массива
+                if (mas[i]==0)continue;
+                if (mas[i]==mas[i+1])
+                {
+                    b++;
+                    continue;
+                }
+                for(int k = 0 ; k < bas.length; k++){ // записываем результаты
+                    if (bas[k]==0){
+                        bas[k]=b;
+                        bas[k+1]=mas[i];
+                        break;
+                    }
+                }
+                b=1;
+            }
+            for(int i = 0 ; i < bas.length ; i++) {
+                mas[i]=bas[i];  // перепимсываем результаты в главный массив
+                bas[i]=0;       // обнуляем вспомагательный массив
+            }
+            for(int x :mas){
+                if (x==0)break;
+                System.out.print(x+  " "); // это вывод =)
+            }
+            System.out.println();
+        }
     }
+
 
     public static void task24() {
         /*
