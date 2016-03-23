@@ -1,4 +1,4 @@
-package Step;
+package Step.array_part1;
 
 import javax.swing.*;
 import java.util.Arrays;
@@ -342,52 +342,51 @@ public class Shkurenko_8 {
         class Array {
             int data[], size;
 
-            Array (int size) {
+            Array(int size) {
                 data = new int[size];
                 this.size = size;
             }
 
-            void fillRandomInt (int rangeL, int rangeH) {
-                for (int i=0; i<size; i++)
-                    data[i] = (int)Math.round(Math.random()*(rangeH-rangeL)+rangeL);
+            void fillRandomInt(int rangeL, int rangeH) {
+                for (int i = 0; i < size; i++)
+                    data[i] = (int) Math.round(Math.random() * (rangeH - rangeL) + rangeL);
             }
 
-            void print () {
-                for (int x:data)
+            void print() {
+                for (int x : data)
                     System.out.printf("%4d", x);
                 System.out.println();
             }
         }
 
-        int M=16, N=12;
+        int M = 16, N = 12;
 
-        Array A = new Array (M);
+        Array A = new Array(M);
         A.fillRandomInt(0, 10);
 
-        Array B = new Array (N);
+        Array B = new Array(N);
         B.fillRandomInt(0, 10);
 
-        System.out.printf("\nМассив A из %d случайных чисел:\n",A.size);
+        System.out.printf("\nМассив A из %d случайных чисел:\n", A.size);
         A.print();
-        System.out.printf("\nМассив B из %d случайных чисел:\n",B.size);
+        System.out.printf("\nМассив B из %d случайных чисел:\n", B.size);
         B.print();
 
         HashSet<Integer> common = new HashSet<Integer>();
 
-        for (int a:A.data)
-            for (int b:B.data)
-                if (a==b) common.add(a);
+        for (int a : A.data)
+            for (int b : B.data)
+                if (a == b) common.add(a);
 
-        Array C = new Array (common.size());
+        Array C = new Array(common.size());
 
-        int i=0;
-        for (Integer val:common)
+        int i = 0;
+        for (Integer val : common)
             C.data[i++] = val;
 
         System.out.printf("\nОбщие элементы первых двух массивов:\n");
         C.print();
     }
-
 
 
     public static void task15() {
@@ -397,54 +396,53 @@ public class Shkurenko_8 {
         class Array {
             int data[], size;
 
-            Array (int size) {
+            Array(int size) {
                 data = new int[size];
                 this.size = size;
             }
 
-            void fillRandomInt (int rangeL, int rangeH) {
-                for (int i=0; i<size; i++)
-                    data[i] = (int)Math.round(Math.random()*(rangeH-rangeL)+rangeL);
+            void fillRandomInt(int rangeL, int rangeH) {
+                for (int i = 0; i < size; i++)
+                    data[i] = (int) Math.round(Math.random() * (rangeH - rangeL) + rangeL);
             }
 
-            void print () {
-                for (int x:data)
+            void print() {
+                for (int x : data)
                     System.out.printf("%4d", x);
                 System.out.println();
             }
         }
-        int M=14, N=10;
+        int M = 14, N = 10;
 
-        Array A = new Array (M);
+        Array A = new Array(M);
         A.fillRandomInt(0, 10);
 
-        Array B = new Array (N);
+        Array B = new Array(N);
         B.fillRandomInt(0, 10);
 
-        System.out.printf("\nМассив A из %d случайных чисел:\n",A.size);
+        System.out.printf("\nМассив A из %d случайных чисел:\n", A.size);
         A.print();
-        System.out.printf("\nМассив B из %d случайных чисел:\n",B.size);
+        System.out.printf("\nМассив B из %d случайных чисел:\n", B.size);
         B.print();
 
         HashSet<Integer> common = new HashSet<Integer>();
 
-        for (int a:A.data) {
-            boolean repeat=false;
-            for (int b:B.data)
-                if (a==b) repeat=true;
-            if (!repeat)common.add(a);
+        for (int a : A.data) {
+            boolean repeat = false;
+            for (int b : B.data)
+                if (a == b) repeat = true;
+            if (!repeat) common.add(a);
         }
 
-        Array C = new Array (common.size());
+        Array C = new Array(common.size());
 
-        int i=0;
-        for (Integer val:common)
+        int i = 0;
+        for (Integer val : common)
             C.data[i++] = val;
 
         System.out.printf("\nЭлементы первого массива, которых нет во втором массиве:\n");
         C.print();
     }
-
 
 
     public static void task16() {
@@ -472,6 +470,7 @@ public class Shkurenko_8 {
             }
         }
     }
+
     public static void task17() {
     /*
     17.	Создать массив из 20 случайных чисел в диапазоне от -10 до 20. Определить максимальное количество подряд идущих положительных элементов, не прерываемых ни нулями, ни отрицательными числами. Вывести найденный фрагмент.
@@ -479,45 +478,56 @@ public class Shkurenko_8 {
         class Array {
             int data[], size;
 
-            Array (int size) {
+            Array(int size) {
                 data = new int[size];
                 this.size = size;
             }
 
-            void fillRandomInt (int rangeL, int rangeH) {
-                for (int i=0; i<size; i++)
-                    data[i] = (int)Math.round(Math.random()*(rangeH-rangeL)+rangeL);
+            void fillRandomInt(int rangeL, int rangeH) {
+                for (int i = 0; i < size; i++)
+                    data[i] = (int) Math.round(Math.random() * (rangeH - rangeL) + rangeL);
             }
 
-            void print () {
-                for (int x:data)
+            void print() {
+                for (int x : data)
                     System.out.printf("%4d", x);
                 System.out.println();
             }
         }
 
-        Array A = new Array (20);
+        Array A = new Array(20);
         A.fillRandomInt(-10, 20);
 
-        System.out.printf("\nМассив A из %d случайных чисел:\n",A.size);
+        System.out.printf("\nМассив A из %d случайных чисел:\n", A.size);
         A.print();
 
-        int begin=0, end=0, count=0, newBegin=0;
-        boolean counting=false;
+        int begin = 0, end = 0, count = 0, newBegin = 0;
+        boolean counting = false;
 
-        for (int i=0; i<A.size; i++) {
-            if (!counting && A.data[i]>0) {newBegin=i; counting=true;}
-            if (counting && (A.data[i]<=0)) {
-                counting=false;
-                if (i-newBegin>count) {begin=newBegin; end=i; count=end-begin;}
+        for (int i = 0; i < A.size; i++) {
+            if (!counting && A.data[i] > 0) {
+                newBegin = i;
+                counting = true;
+            }
+            if (counting && (A.data[i] <= 0)) {
+                counting = false;
+                if (i - newBegin > count) {
+                    begin = newBegin;
+                    end = i;
+                    count = end - begin;
+                }
             }
         }
-        if (counting && A.size-newBegin>count) {begin=newBegin; end=A.size; count=end-begin;}
+        if (counting && A.size - newBegin > count) {
+            begin = newBegin;
+            end = A.size;
+            count = end - begin;
+        }
 
         System.out.printf("\nМаксимальное количество подряд идущих положительных элементов = %d", count);
         System.out.printf("\nНайденный фрагмент:");
-        for (int i=begin; i<end; i++)
-            System.out.printf("%3d",A.data[i]);
+        for (int i = begin; i < end; i++)
+            System.out.printf("%3d", A.data[i]);
     }
 
     public static void task18() {
@@ -528,159 +538,166 @@ public class Shkurenko_8 {
             float data[];
             int size;
 
-            Array (int size) {
+            Array(int size) {
                 data = new float[size];
                 this.size = size;
             }
 
-            void fillRandomInt (float rangeL, float rangeH) {
-                for (int i=0; i<size; i++)
-                    data[i] = (float)(Math.round((Math.random()*(rangeH-rangeL)+rangeL)*10)/10.0);
+            void fillRandomInt(float rangeL, float rangeH) {
+                for (int i = 0; i < size; i++)
+                    data[i] = (float) (Math.round((Math.random() * (rangeH - rangeL) + rangeL) * 10) / 10.0);
             }
 
-            void print () {
-                for (float x:data)
+            void print() {
+                for (float x : data)
                     System.out.printf("  %s", x);
                 System.out.println();
             }
         }
 
-        Array A = new Array (10);
+        Array A = new Array(10);
         A.fillRandomInt(0, 20);
 
         System.out.printf("Массив из %d случайных вещественных чисел:\n", A.size);
         A.print();
 
-        Array B = new Array (A.size);
+        Array B = new Array(A.size);
 
-        int index=0;
-        for (float x:A.data)
-            if (x%1!=0) B.data[index++]=x;
-        for (float x:A.data)
-            if (x%1==0) B.data[index++]=(int)x;
+        int index = 0;
+        for (float x : A.data)
+            if (x % 1 != 0) B.data[index++] = x;
+        for (float x : A.data)
+            if (x % 1 == 0) B.data[index++] = (int) x;
 
         System.out.printf("\nМассив после преобразования:\n");
         B.print();
     }
 
-    public static void task19(){
+    public static void task19() {
     /*
     19.	Создать массив из 10 целых случайных чисел в диапазоне от 0 до 100. Найти элемент, максимально близкий к среднему арифметическому значений массива.
     */
         class Array {
             int data[], size;
 
-            Array (int size) {
+            Array(int size) {
                 data = new int[size];
                 this.size = size;
             }
 
-            void fillRandomInt (int rangeL, int rangeH) {
-                for (int i=0; i<size; i++)
-                    data[i] = (int)Math.round(Math.random()*(rangeH-rangeL)+rangeL);
+            void fillRandomInt(int rangeL, int rangeH) {
+                for (int i = 0; i < size; i++)
+                    data[i] = (int) Math.round(Math.random() * (rangeH - rangeL) + rangeL);
             }
 
-            void print () {
-                for (int x:data)
+            void print() {
+                for (int x : data)
                     System.out.printf("%4d", x);
                 System.out.println();
             }
         }
 
-        Array A = new Array (10);
+        Array A = new Array(10);
         A.fillRandomInt(0, 100);
 
-        System.out.printf("\nМассив A из %d случайных чисел:\n",A.size);
+        System.out.printf("\nМассив A из %d случайных чисел:\n", A.size);
         A.print();
 
-        int sum=0;
-        for (int x:A.data)
-            sum+=x;
+        int sum = 0;
+        for (int x : A.data)
+            sum += x;
 
-        double ariphmet = (double)sum/A.size;
-        int nearAriphmet=A.data[0];
+        double ariphmet = (double) sum / A.size;
+        int nearAriphmet = A.data[0];
 
-        for (int x:A.data)
-            if (Math.abs(ariphmet-x)<Math.abs(ariphmet-nearAriphmet)) nearAriphmet=x;
+        for (int x : A.data)
+            if (Math.abs(ariphmet - x) < Math.abs(ariphmet - nearAriphmet)) nearAriphmet = x;
 
-        System.out.printf("\nCреднее арифметическое значений массива = %s",ariphmet);
-        System.out.printf("\nЭлемент, максимально близкий к среднему арифметическому значений массива = %d",nearAriphmet);
+        System.out.printf("\nCреднее арифметическое значений массива = %s", ariphmet);
+        System.out.printf("\nЭлемент, максимально близкий к среднему арифметическому значений массива = %d", nearAriphmet);
     }
 
-    public static void task20(){
+    public static void task20() {
     /*
     20.	Осуществить циклический сдвиг массива на N элементов. Направление сдвига указывает пользователь (например, массив 0,1,2,3,4,5,6,7,8,9 при циклическом сдвиге вправо на 3 элемента примет вид 7,8,9,0,1,2,3,4,5,6).
     */
         class Array {
             int data[], size;
 
-            Array (int size) {
+            Array(int size) {
                 data = new int[size];
                 this.size = size;
             }
 
-            void fillRandomInt (int rangeL, int rangeH) {
-                for (int i=0; i<size; i++)
-                    data[i] = (int)Math.round(Math.random()*(rangeH-rangeL)+rangeL);
+            void fillRandomInt(int rangeL, int rangeH) {
+                for (int i = 0; i < size; i++)
+                    data[i] = (int) Math.round(Math.random() * (rangeH - rangeL) + rangeL);
             }
 
-            void print () {
-                for (int x:data)
+            void print() {
+                for (int x : data)
                     System.out.printf("%4d", x);
                 System.out.println();
             }
 
-            Array cicleMove (int dirrection) {
+            Array cicleMove(int dirrection) {
                 Array result = new Array(size);
-                for (int i=0; i<size; i++)
-                    result.data[(size+i+dirrection)%size] = data[i];
+                for (int i = 0; i < size; i++)
+                    result.data[(size + i + dirrection) % size] = data[i];
                 return result;
             }
         }
 
 
-        Array A = new Array (9);
-        for (int i=0; i<A.size;)
-            A.data[i]=++i;
+        Array A = new Array(9);
+        for (int i = 0; i < A.size; )
+            A.data[i] = ++i;
 
-        System.out.printf("\nМассив из %d случайных чисел:\n",A.size);
+        System.out.printf("\nМассив из %d случайных чисел:\n", A.size);
         A.print();
 
-        int moveDirrection=-3;
-        Array B = new Array (A.size);
+        int moveDirrection = -3;
+        Array B = new Array(A.size);
         B = A.cicleMove(moveDirrection);
 
         System.out.printf("После циклического сдвига %s на %d элемента:\n",
-                (moveDirrection>0)?"вправо":"влево", Math.abs(moveDirrection));
+                (moveDirrection > 0) ? "вправо" : "влево", Math.abs(moveDirrection));
         B.print();
     }
-    public static void task21(){
+
+    public static void task21() {
     /*
     21.	Создать массив строк на 4000 элементов. Заполнить его римскими числами от 1 до 3999, показать на экране все элементы.
     */
         String romABC[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
-        int    rom123[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        int rom123[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
 
         int value = Integer.parseInt(JOptionPane.showInputDialog("Введите арабское число"));
         int x = value;
         String res = "";
 
-        for (int i=0; i<rom123.length; i++)
+        for (int i = 0; i < rom123.length; i++)
             while (x >= rom123[i]) {
                 x -= rom123[i];
                 res += romABC[i];
             }
 
-        JOptionPane.showMessageDialog(null, value+" = "+res);
+        JOptionPane.showMessageDialog(null, value + " = " + res);
     }
+
     public static void task22() {
     /*
     22.	Ввести число в диапазоне от 0 до 1000000. Озвучить его словами. Например, при вводе числа 25 вывести на экране «двадцать пять».
     */
     }
+
+    public static void task23() {
     /*
     23.	Дана последовательность: 1, 11, 21, 1211, 111221, 312211, 13112221, … Ввести число N. Показать N-ный по счёту элемент последовательности.
    */
+
+    }
+
     public static void task24() {
         /*
         24.написать программу, которая рассчитает среднегодовую температуру (среднюю, максимальную и минимальную),
@@ -706,12 +723,12 @@ public class Shkurenko_8 {
         System.out.println("Среднегодовая температура максимальная = " + maxs / 12);
         double minx = 0;
         double b = minx;
-        for (int i = 0; i < min.length-1; i++) {
-                if ((min[i] - min[i + 1] < b)) {
-                    b = min[i] - min[i+1];
-                }
+        for (int i = 0; i < min.length - 1; i++) {
+            if ((min[i] - min[i + 1] < b)) {
+                b = min[i] - min[i + 1];
             }
-        System.out.println(b);
         }
-
+        System.out.println(b);
     }
+
+}
