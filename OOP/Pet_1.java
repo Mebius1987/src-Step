@@ -31,18 +31,21 @@ class Dog { // do not change class name!
     void laet() {
         System.out.println(name + " лает на прохожих...");
     }
-    void prosit(){
+
+    void prosit() {
         System.out.println(name + " просится гулять");
     }
-    void gdet(){
+
+    void gdet() {
         System.out.println(name + " ждет хозяйку у входа");
     }
-    void grustit(){
+
+    void grustit() {
         System.out.println(name + " грустит, что хозяйка не его чухает");
     }
 }
 
-class yourMainClassName { // change!
+class Pet { // change!
 
     public static void main(String[] args) {
         Dog dog = new Dog();
