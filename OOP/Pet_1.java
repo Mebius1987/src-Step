@@ -25,7 +25,7 @@ class Dog { // do not change class name!
     }
 
     void sleep() {
-        System.out.println(name + " спит.");
+        System.out.println(name + " спит");
     }
 
     void laet() {
@@ -49,12 +49,15 @@ class Pet { // change!
 
     public static void main(String[] args) {
         Dog dog = new Dog();
+
         dog.name = " собачка Гарри";
+        dog.age = 9;
         dog.play();
         dog.laet();
         dog.sleep();
         dog.prosit();
         dog.gdet();
         dog.grustit();
+
     }
 }
