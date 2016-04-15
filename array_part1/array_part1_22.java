@@ -2,9 +2,7 @@ package Step.array_part1;
 
 import java.util.Scanner;
 
-/**
- * Created by Mebius on 09.03.2016.
- */
+
 public class array_part1_22 {
     private static Scanner input = new Scanner(System.in);
 
@@ -75,7 +73,7 @@ public class array_part1_22 {
     }
 
     public static void main(String[] args) {
-        System.out.print("Введите челое число не больше милиарда... ");
+        System.out.println("Введите челое число не больше милиарда... ");
         int x = input.nextInt();
         println(toString(x));
     }

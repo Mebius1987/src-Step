@@ -244,7 +244,7 @@ public class Shkurenko_7 {
         int copy;
         for (int i = 1; i < 100000; i++) {
             copy = i;
-            success = true;// vse cifri podxod9t'
+            success = true;// vse DigitalSpeaker podxod9t'
             while (copy > 0) {
                 if (copy % 10 == 4 || copy % 100 == 13) {
                     System.out.println("номер будет исключен " + i);
