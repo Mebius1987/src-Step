@@ -93,11 +93,10 @@ class MyArrayList {
 
     public void remove(int value) {
 
-        if (value < size) {
-            for (int i = value -1; i <= size; i++) {
-                data[i] = data[i + 1];
-            }
-            size--;
+
+        for (int i = 0; i < size; i++) {
+            if(data[i]==value)
+                removeAt(i+1);
         }
     }
 
@@ -118,6 +117,8 @@ class MArraylist {
         ar.insert(2, 52);
         ar.print();
         ar.removeAt(3);
+        ar.print();
+        ar.remove(12);
         ar.print();
         /*
         ar.clear();
