@@ -92,8 +92,6 @@ class MyArrayList {
     }
 
     public void remove(int value) {
-
-
         for (int i = 0; i < size; i++) {
             if(data[i]==value)
                 removeAt(i+1);
