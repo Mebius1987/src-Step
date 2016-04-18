@@ -90,9 +90,9 @@ class MyArrayList {
             size--;
         }
     }
-/
+
     public void remove(int value) {
-        ensureCapacity();
+
         if (value < size) {
             for (int i = value -1; i <= size; i++) {
                 data[i] = data[i + 1];
