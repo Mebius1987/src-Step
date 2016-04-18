@@ -84,7 +84,7 @@ class MyArrayList {
     public void removeAt(int index) {
         ensureCapacity();
         if (index < size) {
-            for (int i = index -1; i <= size; i++) {
+            for (int i = index - 1; i <= size; i++) {
                 data[i] = data[i + 1];
             }
             size--;
@@ -93,11 +93,18 @@ class MyArrayList {
 
     public void remove(int value) {
         for (int i = 0; i < size; i++) {
-            if(data[i]==value)
-                removeAt(i+1);
+            if (data[i] == value)
+                removeAt(i + 1);
         }
     }
 
+    public void popFront() {
+        removeAt(1);
+    }
+
+    public void popBack() {
+        size--;
+    }
 
 }
 
@@ -117,6 +124,10 @@ class MArraylist {
         ar.removeAt(3);
         ar.print();
         ar.remove(12);
+        ar.print();
+        ar.popFront();
+        ar.print();
+        ar.popBack();
         ar.print();
         /*
         ar.clear();
