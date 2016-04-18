@@ -70,8 +70,27 @@ class MyArrayList {
             }
             data = temp;
         }
-
     }
+
+    public void insert(int value, int znak) {
+        ensureCapacity();
+        for (int i = size + 1; i > value; i--) {
+            data[i] = data[i - 1];
+        }
+        data[value] = znak;
+        size++;
+    }
+
+    public void removeAt(int value) {
+        ensureCapacity();
+        for (int i = size ; i > value; i--) {
+            data[i] = data[i - 1];
+        }
+        data[value] = znak;
+        size++;
+    }
+
+
 }
 
 class MArraylist {
@@ -85,12 +104,17 @@ class MArraylist {
         ar.print();
         ar.pushFront(14);
         ar.print();
+        ar.insert(2,52);
+        ar.print();
+        /*
         ar.clear();
         ar.print();
+        /*
         for (int i = 0; i < 1000; i++) {
             ar.pushBack(i);
             ar.print();
         }
+        */
     }
 }
 
