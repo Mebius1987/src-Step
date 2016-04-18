@@ -72,22 +72,33 @@ class MyArrayList {
         }
     }
 
-    public void insert(int value, int znak) {
+    public void insert(int index, int znak) {
         ensureCapacity();
-        for (int i = size + 1; i > value; i--) {
+        for (int i = size + 1; i > index; i--) {
             data[i] = data[i - 1];
         }
-        data[value] = znak;
+        data[index] = znak;
         size++;
     }
 
-    public void removeAt(int value) {
+    public void removeAt(int index) {
         ensureCapacity();
-        for (int i = size ; i > value; i--) {
-            data[i] = data[i - 1];
+        if (index < size) {
+            for (int i = index -1; i <= size; i++) {
+                data[i] = data[i + 1];
+            }
+            size--;
         }
-        data[value] = znak;
-        size++;
+    }
+/
+    public void remove(int value) {
+        ensureCapacity();
+        if (value < size) {
+            for (int i = value -1; i <= size; i++) {
+                data[i] = data[i + 1];
+            }
+            size--;
+        }
     }
 
 
@@ -104,7 +115,9 @@ class MArraylist {
         ar.print();
         ar.pushFront(14);
         ar.print();
-        ar.insert(2,52);
+        ar.insert(2, 52);
+        ar.print();
+        ar.removeAt(3);
         ar.print();
         /*
         ar.clear();
