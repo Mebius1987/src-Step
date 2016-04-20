@@ -128,6 +128,15 @@ class MyArrayList {
         return -1;
     }
 
+    public int lastIndexOf (int value) {
+        for (int i = size; i > 0; i--) {
+            if (data[i] == value) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 }
 
 class MArraylist {
@@ -152,8 +161,9 @@ class MArraylist {
         ar.print();
         ar.popBack();
         ar.print();
-        ar.indexOf(18);
+        System.out.println(ar.indexOf(18));
 
+        System.out.println(ar.lastIndexOf(11));
         /*
         ar.clear();
         ar.print();
