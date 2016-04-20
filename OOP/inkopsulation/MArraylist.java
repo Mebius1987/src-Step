@@ -82,12 +82,12 @@ class MyArrayList {
     }
 
     public void removeAt(int index) {
-        ensureCapacity();
         if (index < size) {
             for (int i = index - 1; i <= size; i++) {
                 data[i] = data[i + 1];
             }
             size--;
+            trimToSize();
         }
     }
 
@@ -100,10 +100,32 @@ class MyArrayList {
 
     public void popFront() {
         removeAt(1);
+        trimToSize();
     }
 
     public void popBack() {
         size--;
+        trimToSize();
+    }
+
+    private void trimToSize() {
+        if (size < capacity / 2) {
+            int temp[] = new int[capacity];
+            for (int i = 0; i < size; i++) {
+                temp[i] = data[i];
+            }
+            data = temp;
+            capacity = size;
+        }
+    }
+
+    public int indexOf(int value) {
+        for (int i = 0; i < size; i++) {
+            if (data[i] == value) {
+                return i;
+            } else
+                return -1;
+        }
     }
 
 }
@@ -129,6 +151,8 @@ class MArraylist {
         ar.print();
         ar.popBack();
         ar.print();
+        ar.indexOf(18);
+
         /*
         ar.clear();
         ar.print();
