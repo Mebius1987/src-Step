@@ -123,9 +123,9 @@ class MyArrayList {
         for (int i = 0; i < size; i++) {
             if (data[i] == value) {
                 return i;
-            } else
-                return -1;
+            }
         }
+        return -1;
     }
 
 }
@@ -135,6 +135,7 @@ class MArraylist {
     public static void main(String[] args) {
         // тесты работы с эррейлистом:
         MyArrayList ar = new MyArrayList();
+
         ar.pushBack(12);
         ar.pushBack(18);
         ar.pushBack(16);
