@@ -127,7 +127,7 @@ class MyArrayList {
     }
 
     public int lastIndexOf(int value) {
-        for (int i = size; i > 0; i--) {
+        for (int i = size; i >= 0; i--) {
             if (data[i] == value) {
                 return i;
             }
@@ -190,6 +190,9 @@ class MArraylist {
         ar.popBack();
         System.out.println("Pop Back");
         ar.print();
+
+        int index1 = ar.lastIndexOf(21);
+        System.out.println(index1);
 
         /*
          * ar.clear(); ar.print(); /* for (int i = 0; i < 1000; i++) {
