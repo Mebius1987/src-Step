@@ -1,5 +1,7 @@
 package Step.OOP.inkopsulation;
 
+import java.util.Arrays;
+
 /**
  * Created by Mebius on 13.04.2016.
  */
@@ -26,7 +28,7 @@ class MyArrayList {
     }
 
     public void pushBack(int value) {
-        ensureCapacity(); // проверку, хватит ли места для нового элемента - делайте сами :)
+        ensureCapacity();
         data[size++] = value;
     }
 
@@ -40,14 +42,12 @@ class MyArrayList {
     }
 
     public void clear() {
-        for (int i = 0; i < size; i++) {
-            data[i] = 0;
-        }
+        Arrays.fill(data, 0);
         size = 0;
     }
 
     public boolean isEmpty() {
-        return size == 0; // красота :)
+        return size == 0;
     }
 
     public void print() {
@@ -65,27 +65,27 @@ class MyArrayList {
         if (size == capacity) {
             capacity = (capacity * 3) / 2 + 1;
             int temp[] = new int[capacity];
-            for (int i = 0; i < size; i++) {
-                temp[i] = data[i];
-            }
+            System.arraycopy(data, 0, temp, 0, size);
             data = temp;
         }
     }
 
-    public void insert(int index, int znak) {
+    public boolean insert(int index, int znak) {
         ensureCapacity();
-        for (int i = size + 1; i > index; i--) {
-            data[i] = data[i - 1];
+        if (index < size) {
+            size++;
+            ensureCapacity();
+            // тут тоже можно заменить на System.arraycopy
+            System.arraycopy(data, index, data, index + 1, size - index);
+            data[index] = znak;
+            return true;
         }
-        data[index] = znak;
-        size++;
+        return false;
     }
 
     public void removeAt(int index) {
         if (index < size) {
-            for (int i = index - 1; i <= size; i++) {
-                data[i] = data[i + 1];
-            }
+            System.arraycopy(data, index + 1, data, index, size - index);
             size--;
             trimToSize();
         }
@@ -111,9 +111,7 @@ class MyArrayList {
     private void trimToSize() {
         if (size < capacity / 2) {
             int temp[] = new int[capacity];
-            for (int i = 0; i < size; i++) {
-                temp[i] = data[i];
-            }
+            System.arraycopy(data, 0, temp, 0, size);
             data = temp;
             capacity = size;
         }
@@ -128,7 +126,7 @@ class MyArrayList {
         return -1;
     }
 
-    public int lastIndexOf (int value) {
+    public int lastIndexOf(int value) {
         for (int i = size; i > 0; i--) {
             if (data[i] == value) {
                 return i;
