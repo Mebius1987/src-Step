@@ -142,35 +142,59 @@ class MArraylist {
     public static void main(String[] args) {
         // тесты работы с эррейлистом:
         MyArrayList ar = new MyArrayList();
-
-        ar.pushBack(12);
-        ar.pushBack(18);
-        ar.pushBack(16);
-        ar.print();
-        ar.pushFront(14);
-        ar.print();
-        ar.insert(2, 52);
-        ar.print();
-        ar.removeAt(3);
-        ar.print();
-        ar.remove(12);
-        ar.print();
-        ar.popFront();
-        ar.print();
-        ar.popBack();
-        ar.print();
-        System.out.println(ar.indexOf(18));
-
-        System.out.println(ar.lastIndexOf(11));
-        /*
-        ar.clear();
-        ar.print();
-        /*
-        for (int i = 0; i < 1000; i++) {
+        // тестировать надо правильно
+        for (int i = 0; i < 25; i++)
+        {
             ar.pushBack(i);
-            ar.print();
         }
-        */
+        System.out.println("Push Back");
+        ar.print();
+
+        for (int i = 0; i < 25; i++)
+        {
+            ar.pushFront(i);
+        }
+        System.out.println("Push Front");
+        ar.print();
+
+        System.out.println("Insert");
+        ar.insert(25, 52);
+        ar.print();
+
+        System.out.println("BAD Insert");
+        ar.insert(100, 52);
+        ar.print();
+
+        for (int i = 0; i < 25; i++)
+        {
+            ar.removeAt(i);
+        }
+        System.out.println("Remove At");
+        ar.print();
+
+        int index = ar.indexOf(12);
+        System.out.println(index);
+
+        for (int i = 0; i < 25; i++)
+        {
+            ar.remove(i);
+        }
+
+        System.out.println("Remove");
+        ar.print();
+
+        ar.popFront();
+        System.out.println("Pop Front");
+        ar.print();
+
+        ar.popBack();
+        System.out.println("Pop Back");
+        ar.print();
+
+        /*
+         * ar.clear(); ar.print(); /* for (int i = 0; i < 1000; i++) {
+         * ar.pushBack(i); ar.print(); }
+         */
     }
 }
 

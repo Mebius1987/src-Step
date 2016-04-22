@@ -169,11 +169,11 @@ class SinglyLinkedList {
             return count == 0;
     }
 
-    public void [] toArray (){
+   // public void [] toArray (){
 
 
     }
-}
+
 
 class Program1 {
 
